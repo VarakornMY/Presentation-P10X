@@ -1094,6 +1094,9 @@
       this._stage = stage;
       this._slot = slot;
       this._overlay = overlay;
+      // Touch devices get the toolbar up-front — there is no mouse to
+      // summon it and nothing on screen hints that tapping would.
+      if (!FINE_POINTER_MQ.matches) this._flashOverlay();
       this._rail = rail;
       this._resize = resize;
       this._menu = menu;
@@ -1334,6 +1337,8 @@
       if (!this._overlay || this._presenting) return;
       this._overlay.setAttribute('data-visible', '');
       if (this._hideTimer) clearTimeout(this._hideTimer);
+      // Touch: no hover to re-summon it, so keep the toolbar visible.
+      if (!FINE_POINTER_MQ.matches) return;
       this._hideTimer = setTimeout(() => {
         this._overlay.removeAttribute('data-visible');
       }, OVERLAY_HIDE_MS);
