@@ -116,6 +116,17 @@
 
   const pad2 = (n) => String(n).padStart(2, '0');
 
+  // Fullscreen with webkit fallback (iPadOS Safari). iPhone Safari has no
+  // element fullscreen at all — callers hide the button via fullscreenSupported.
+  const fullscreenSupported = () =>
+    document.fullscreenEnabled || document.webkitFullscreenEnabled || false;
+  const toggleFullscreen = () => {
+    const fsEl = document.fullscreenElement || document.webkitFullscreenElement;
+    const root = document.documentElement;
+    if (fsEl) (document.exitFullscreen || document.webkitExitFullscreen).call(document);
+    else (root.requestFullscreen || root.webkitRequestFullscreen).call(root);
+  };
+
   // Label precedence: data-label → data-screen-label (number stripped) → first heading → "Slide".
   const getSlideLabel = (el) => {
     const explicit = el.getAttribute('data-label');
@@ -235,6 +246,16 @@
       color: rgba(255,255,255,0.72);
       transition: background 140ms ease, color 140ms ease;
       -webkit-tap-highlight-color: transparent;
+    }
+    /* Touch: bigger tap targets, clear the home-indicator safe area. */
+    @media (pointer: coarse) {
+      .overlay {
+        bottom: calc(22px + env(safe-area-inset-bottom, 0px));
+        gap: 6px;
+        padding: 6px;
+      }
+      .btn { height: 40px; min-width: 40px; }
+      .btn svg { width: 18px; height: 18px; }
     }
     .btn:hover { background: rgba(255,255,255,0.12); color: #fff; }
     .btn:active { background: rgba(255,255,255,0.18); }
@@ -957,10 +978,9 @@
       overlay.querySelector('.prev').addEventListener('click', () => this._advance(-1, 'click'));
       overlay.querySelector('.next').addEventListener('click', () => this._advance(1, 'click'));
       overlay.querySelector('.reset').addEventListener('click', () => this._go(0, 'click'));
-      overlay.querySelector('.fs').addEventListener('click', () => {
-        if (document.fullscreenElement) document.exitFullscreen();
-        else document.documentElement.requestFullscreen();
-      });
+      const fsBtn = overlay.querySelector('.fs');
+      fsBtn.addEventListener('click', toggleFullscreen);
+      if (!fullscreenSupported()) fsBtn.style.display = 'none';
 
       // Thumbnail rail + context menu. Thumbnails are populated in
       // _renderRail() after _collectSlides().
@@ -1475,6 +1495,8 @@
       const rw = this._railWidth();
       const mid = rw + (window.innerWidth - rw) / 2;
       this._advance(e.clientX < mid ? -1 : 1, 'tap');
+      // No mousemove on touch — surface the toolbar on tap instead.
+      this._flashOverlay();
     }
 
     _onKey(e) {
@@ -1520,8 +1542,7 @@
       } else if (key === 'r' || key === 'R') {
         this._go(0, 'keyboard');
       } else if (key === 'f' || key === 'F') {
-        if (document.fullscreenElement) document.exitFullscreen();
-        else document.documentElement.requestFullscreen();
+        if (fullscreenSupported()) toggleFullscreen();
       } else if (/^[0-9]$/.test(key)) {
         // 1..9 jump to that slide; 0 jumps to 10.
         const n = key === '0' ? 9 : parseInt(key, 10) - 1;
