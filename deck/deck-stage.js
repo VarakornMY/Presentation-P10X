@@ -139,7 +139,13 @@
     const fsEl = document.fullscreenElement || document.webkitFullscreenElement;
     const root = document.documentElement;
     if (fsEl) (document.exitFullscreen || document.webkitExitFullscreen).call(document);
-    else (root.requestFullscreen || root.webkitRequestFullscreen).call(root);
+    else {
+      const p = (root.requestFullscreen || root.webkitRequestFullscreen).call(root);
+      // Phones: fullscreen a 16:9 deck means landscape — lock it where allowed.
+      if (p && p.then && screen.orientation && screen.orientation.lock) {
+        p.then(() => screen.orientation.lock('landscape')).catch(() => {});
+      }
+    }
   };
 
   // Label precedence: data-label → data-screen-label (number stripped) → first heading → "Slide".
@@ -670,6 +676,11 @@
       window.addEventListener('keydown', this._onKey);
       window.addEventListener('resize', this._onResize);
       window.addEventListener('mousemove', this._onMouseMove, { passive: true });
+      // Rotate on touch: re-run the visibility rule (portrait pins the
+      // toolbar, landscape flashes it then hides for a clean full view).
+      matchMedia('(orientation: portrait)').addEventListener('change', () => {
+        if (!FINE_POINTER_MQ.matches) this._flashOverlay();
+      });
       window.addEventListener('message', this._onMessage);
       window.addEventListener('click', this._onDocClick, true);
       this.addEventListener('click', this._onTap);
@@ -1352,8 +1363,10 @@
       if (!this._overlay || this._presenting) return;
       this._overlay.setAttribute('data-visible', '');
       if (this._hideTimer) clearTimeout(this._hideTimer);
-      // Touch: no hover to re-summon it, so keep the toolbar visible.
-      if (!FINE_POINTER_MQ.matches) return;
+      // Touch portrait: no hover to re-summon it, so keep the toolbar
+      // visible. Touch landscape is the "kinda fullscreen" view — the slide
+      // fills the screen, so let the toolbar auto-hide; a tap brings it back.
+      if (!FINE_POINTER_MQ.matches && matchMedia('(orientation: portrait)').matches) return;
       this._hideTimer = setTimeout(() => {
         this._overlay.removeAttribute('data-visible');
       }, OVERLAY_HIDE_MS);
