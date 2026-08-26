@@ -116,6 +116,16 @@
 
   const pad2 = (n) => String(n).padStart(2, '0');
 
+  // Bottom-left corner that summons the collapsed control dock. Sized to
+  // comfortably cover the expanded toolbar plus a little slack around it.
+  const DOCK_ZONE_W = 420;
+  const DOCK_ZONE_H = 150;
+  const inDockZone = (x, y) =>
+    x <= DOCK_ZONE_W && y >= window.innerHeight - DOCK_ZONE_H;
+
+  const isFullscreen = () =>
+    !!(document.fullscreenElement || document.webkitFullscreenElement);
+
   // Fullscreen with webkit fallback (iPadOS Safari). iPhone Safari/Chrome
   // have no element fullscreen at all (WebKit policy) — there the button
   // shows a hint toast instead of silently hiding.
@@ -220,9 +230,10 @@
 
     .overlay {
       position: fixed;
-      left: 50%;
+      left: 22px;
       bottom: 22px;
-      transform: translate(-50%, 6px) scale(0.92);
+      transform: translateY(6px) scale(0.92);
+      transform-origin: left bottom;
       filter: blur(6px);
       display: flex;
       align-items: center;
@@ -244,9 +255,15 @@
     .overlay[data-visible] {
       opacity: 1;
       pointer-events: auto;
-      transform: translate(-50%, 0) scale(1);
+      transform: none;
       filter: blur(0);
     }
+
+    /* Collapsed: only the handle shows. Clicking it reveals the controls. */
+    .overlay:not([data-open]) .hgroup { display: none; }
+    .hgroup { display: flex; align-items: center; gap: inherit; }
+    .overlay[data-open] .handle svg { transform: rotate(180deg); }
+    .handle svg { transition: transform 220ms cubic-bezier(.2,.8,.2,1); }
 
     .btn {
       appearance: none;
@@ -272,6 +289,7 @@
     @media (pointer: coarse) {
       .overlay {
         bottom: calc(22px + env(safe-area-inset-bottom, 0px));
+        left: calc(22px + env(safe-area-inset-left, 0px));
         gap: 6px;
         padding: 6px;
       }
@@ -676,11 +694,21 @@
       window.addEventListener('keydown', this._onKey);
       window.addEventListener('resize', this._onResize);
       window.addEventListener('mousemove', this._onMouseMove, { passive: true });
-      // Rotate on touch: re-run the visibility rule (portrait pins the
-      // toolbar, landscape flashes it then hides for a clean full view).
+      // Rotate on touch: flash the dock so it is findable in the new layout.
       matchMedia('(orientation: portrait)').addEventListener('change', () => {
         if (!FINE_POINTER_MQ.matches) this._flashOverlay();
       });
+      // Entering fullscreen hides the dock outright; leaving brings it back.
+      this._onFsChange = () => {
+        if (isFullscreen()) {
+          if (this._hideTimer) clearTimeout(this._hideTimer);
+          if (this._overlay) this._overlay.removeAttribute('data-visible');
+        } else {
+          this._flashOverlay();
+        }
+      };
+      document.addEventListener('fullscreenchange', this._onFsChange);
+      document.addEventListener('webkitfullscreenchange', this._onFsChange);
       window.addEventListener('message', this._onMessage);
       window.addEventListener('click', this._onDocClick, true);
       this.addEventListener('click', this._onTap);
@@ -921,6 +949,8 @@
       window.removeEventListener('keydown', this._onKey);
       window.removeEventListener('resize', this._onResize);
       window.removeEventListener('mousemove', this._onMouseMove);
+      document.removeEventListener('fullscreenchange', this._onFsChange);
+      document.removeEventListener('webkitfullscreenchange', this._onFsChange);
       window.removeEventListener('message', this._onMessage);
       window.removeEventListener('click', this._onDocClick, true);
       window.removeEventListener('beforeprint', this._onBeforePrint);
@@ -986,20 +1016,33 @@
       overlay.setAttribute('aria-label', 'Deck controls');
       overlay.setAttribute('data-omelette-chrome', '');
       overlay.innerHTML = `
-        <button class="btn prev" type="button" aria-label="Previous slide" title="Previous (←)">
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3L5 8l5 5"/></svg>
-        </button>
-        <span class="count" aria-live="polite"><span class="current">1</span><span class="sep">/</span><span class="total">1</span></span>
-        <button class="btn next" type="button" aria-label="Next slide" title="Next (→)">
+        <button class="btn handle" type="button" aria-label="Show deck controls" aria-expanded="false" title="Deck controls">
           <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg>
         </button>
-        <span class="divider"></span>
-        <button class="btn reset" type="button" aria-label="Reset to first slide" title="Reset (R)">Reset<span class="kbd">R</span></button>
-        <span class="divider"></span>
-        <button class="btn fs" type="button" aria-label="Toggle fullscreen" title="Fullscreen (F)">
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2H2v4M10 2h4v4M6 14H2v-4M10 14h4v-4"/></svg>
-        </button>
+        <span class="hgroup">
+          <button class="btn prev" type="button" aria-label="Previous slide" title="Previous (←)">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3L5 8l5 5"/></svg>
+          </button>
+          <span class="count" aria-live="polite"><span class="current">1</span><span class="sep">/</span><span class="total">1</span></span>
+          <button class="btn next" type="button" aria-label="Next slide" title="Next (→)">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg>
+          </button>
+          <span class="divider"></span>
+          <button class="btn reset" type="button" aria-label="Reset to first slide" title="Reset (R)">Reset<span class="kbd">R</span></button>
+          <span class="divider"></span>
+          <button class="btn fs" type="button" aria-label="Toggle fullscreen" title="Fullscreen (F)">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2H2v4M10 2h4v4M6 14H2v-4M10 14h4v-4"/></svg>
+          </button>
+        </span>
       `;
+
+      const handle = overlay.querySelector('.handle');
+      handle.addEventListener('click', () => {
+        const open = overlay.toggleAttribute('data-open');
+        handle.setAttribute('aria-expanded', String(open));
+        handle.setAttribute('aria-label', open ? 'Hide deck controls' : 'Show deck controls');
+        this._flashOverlay();
+      });
 
       overlay.querySelector('.prev').addEventListener('click', () => this._advance(-1, 'click'));
       overlay.querySelector('.next').addEventListener('click', () => this._advance(1, 'click'));
@@ -1120,9 +1163,8 @@
       this._stage = stage;
       this._slot = slot;
       this._overlay = overlay;
-      // Touch devices get the toolbar up-front — there is no mouse to
-      // summon it and nothing on screen hints that tapping would.
-      if (!FINE_POINTER_MQ.matches) this._flashOverlay();
+      // Flash the dock once on load so it is discoverable, then let it fade.
+      this._flashOverlay();
       this._rail = rail;
       this._resize = resize;
       this._menu = menu;
@@ -1360,13 +1402,11 @@
       // Host posts __omelette_presenting while in fullscreen/tab presentation
       // mode — suppress the nav footer entirely (both hover and slide-change
       // flash) so the audience sees clean slides.
-      if (!this._overlay || this._presenting) return;
+      // Fullscreen is the clean-view mode: no chrome at all until the user
+      // leaves it (Esc on desktop, the system gesture on phones).
+      if (!this._overlay || this._presenting || isFullscreen()) return;
       this._overlay.setAttribute('data-visible', '');
       if (this._hideTimer) clearTimeout(this._hideTimer);
-      // Touch portrait: no hover to re-summon it, so keep the toolbar
-      // visible. Touch landscape is the "kinda fullscreen" view — the slide
-      // fills the screen, so let the toolbar auto-hide; a tap brings it back.
-      if (!FINE_POINTER_MQ.matches && matchMedia('(orientation: portrait)').matches) return;
       this._hideTimer = setTimeout(() => {
         this._overlay.removeAttribute('data-visible');
       }, OVERLAY_HIDE_MS);
@@ -1419,8 +1459,10 @@
       }
     }
 
-    _onMouseMove() {
-      // Keep overlay visible while mouse moves; hide after idle.
+    _onMouseMove(e) {
+      // Only the dock's own corner summons it — moving the mouse anywhere
+      // else used to re-arm the timer forever, so it never went away.
+      if (e && !inDockZone(e.clientX, e.clientY)) return;
       this._flashOverlay();
     }
 
@@ -1525,11 +1567,16 @@
         if (n.matches && n.matches(INTERACTIVE_SEL)) return;
       }
       e.preventDefault();
+      // A tap in the dock's corner summons it instead of navigating — the
+      // only way back to a faded-out dock on a device with no cursor.
+      if (!isFullscreen() && this._overlay && !this._overlay.hasAttribute('data-visible')
+          && inDockZone(e.clientX, e.clientY)) {
+        this._flashOverlay();
+        return;
+      }
       const rw = this._railWidth();
       const mid = rw + (window.innerWidth - rw) / 2;
       this._advance(e.clientX < mid ? -1 : 1, 'tap');
-      // No mousemove on touch — surface the toolbar on tap instead.
-      this._flashOverlay();
     }
 
     _onKey(e) {
