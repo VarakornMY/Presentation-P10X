@@ -116,11 +116,26 @@
 
   const pad2 = (n) => String(n).padStart(2, '0');
 
-  // Fullscreen with webkit fallback (iPadOS Safari). iPhone Safari has no
-  // element fullscreen at all — callers hide the button via fullscreenSupported.
+  // Fullscreen with webkit fallback (iPadOS Safari). iPhone Safari/Chrome
+  // have no element fullscreen at all (WebKit policy) — there the button
+  // shows a hint toast instead of silently hiding.
   const fullscreenSupported = () =>
     document.fullscreenEnabled || document.webkitFullscreenEnabled || false;
   const toggleFullscreen = () => {
+    if (!fullscreenSupported()) {
+      let t = document.getElementById('__fs_toast');
+      if (!t) {
+        t = document.createElement('div');
+        t.id = '__fs_toast';
+        t.textContent = 'iPhone blocks fullscreen in the browser — rotate to landscape, or Share → Add to Home Screen for a fullscreen app.';
+        t.style.cssText = 'position:fixed;left:50%;bottom:calc(84px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);max-width:min(86vw,420px);background:#000;color:#fff;font:13px/1.45 "DM Sans",sans-serif;padding:12px 16px;border-radius:14px;z-index:2147483001;text-align:center;box-shadow:0 8px 24px rgba(0,0,0,.35);opacity:0;transition:opacity .25s;pointer-events:none;';
+        document.body.appendChild(t);
+      }
+      t.style.opacity = '1';
+      clearTimeout(t.__hide);
+      t.__hide = setTimeout(() => { t.style.opacity = '0'; }, 4000);
+      return;
+    }
     const fsEl = document.fullscreenElement || document.webkitFullscreenElement;
     const root = document.documentElement;
     if (fsEl) (document.exitFullscreen || document.webkitExitFullscreen).call(document);
@@ -980,7 +995,7 @@
       overlay.querySelector('.reset').addEventListener('click', () => this._go(0, 'click'));
       const fsBtn = overlay.querySelector('.fs');
       fsBtn.addEventListener('click', toggleFullscreen);
-      if (!fullscreenSupported()) fsBtn.style.display = 'none';
+
 
       // Thumbnail rail + context menu. Thumbnails are populated in
       // _renderRail() after _collectSlides().
@@ -1547,7 +1562,7 @@
       } else if (key === 'r' || key === 'R') {
         this._go(0, 'keyboard');
       } else if (key === 'f' || key === 'F') {
-        if (fullscreenSupported()) toggleFullscreen();
+        toggleFullscreen();
       } else if (/^[0-9]$/.test(key)) {
         // 1..9 jump to that slide; 0 jumps to 10.
         const n = key === '0' ? 9 : parseInt(key, 10) - 1;
