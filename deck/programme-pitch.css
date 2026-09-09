@@ -172,6 +172,13 @@ deck-stage { background: #e9eeea; --pitch-paper: #faf9f4; --pitch-ink: #173b39; 
 .milestone-table td:last-child { color: var(--pitch-muted); font-size: 23px; }
 .undated-activities { background: var(--pitch-light); padding: 24px 30px; margin-top: 30px; }
 .undated-activities > div { display: flex; justify-content: space-between; gap: 25px; margin-top: 17px; font-size: 24px; font-weight: 700; }
+.progress-schedule .milestone-table { margin-top: 53px; table-layout: fixed; }
+.progress-schedule .milestone-table th:first-child { width: 260px; }
+.progress-schedule .milestone-table th:nth-child(2) { width: 585px; }
+.progress-schedule .milestone-table td { padding: 25px 0; font-size: 23px; }
+.progress-schedule .milestone-table td:first-child { width: auto; font-size: 22px; }
+.progress-schedule .milestone-table td:nth-child(2) { width: auto; }
+.progress-schedule .milestone-table td:last-child { font-size: 22px; }
 
 .strategy-layout { display: grid; grid-template-columns: 1090px 565px; gap: 65px; margin-top: 44px; }
 .strategy-list { list-style: none; margin: 0; padding: 0; }

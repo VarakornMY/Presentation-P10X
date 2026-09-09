@@ -8,7 +8,7 @@ The presentation owner's teammate feedback supplies the revised structure and pr
 
 1. Cover with an existing formal training photograph.
 2. Joint P10X Academy and UTM initiative, retaining the four original objectives.
-3. Dated project milestones and a separate group of undated engagement activities.
+3. Programme progress: all eight activities in the owner's supplied order, with dates only where provided.
 4. Awareness, SKM Level 2 entry, seven-month training, job matching and income monitoring.
 5. Proposed annual training intake and the 500-youth commitment.
 6. Reported programme progress and the documented November 2025 training baseline.
@@ -23,13 +23,15 @@ English is used throughout, retaining Orang Asli, location names and established
 ## Project milestones supplied by the team
 
 - 25 September 2025: project initiation.
+- Undated: programme at Kampung Lembah Pangsun community hall, engaging the Orang Asli community in Sungai Pangsun and introducing TVET.
+- Undated: community programme at UTM.
 - 25 November 2025: student registration and handover with UTM at P10X Academy.
 - 27 November 2025: JAKOA Selangor permission letter for carrying out the project.
 - 4 June 2026: trainee supervision and window tint demonstrations by Orang Asli trainees for new students.
 - 12 August 2026: 2026 recruitment programme at Dewan Temuan.
 - 28 August 2026: new trainee intake and registration at P10X Academy.
 
-No dates were provided for initial coordination meetings, Kampung Lembah Pangsun community outreach or the UTM community programme. These are shown without dates and without asserting their exact chronological order.
+Slide 3 follows the owner's latest eight-item list exactly in sequence. The community hall programme and UTM community programme appear between initiation and registration, with no dates assigned. The earlier separate entry for initial coordination meetings has been removed.
 
 The project initiation date is not described as the first-ever UTM engagement with Orang Asli communities. The November event is not labelled the academy's first-ever Orang Asli intake.
 
