@@ -222,15 +222,14 @@ deck-stage { background: #e9eeea; --pitch-paper: #faf9f4; --pitch-ink: #173b39; 
 .progress-baseline strong { font-size: 59px; line-height: 1.1; letter-spacing: -.04em; color: var(--pitch-teal); }
 .progress-baseline span { font-size: 26px; font-weight: 500; letter-spacing: 0; color: var(--pitch-ink); margin-left: 15px; }
 
-.income-table { margin-top: 48px; }
-.income-table td { padding: 28px 0; border-top: 1px solid var(--pitch-line); font-size: 29px; }
+.income-table { margin-top: 76px; }
+.income-table th { padding-bottom: 24px; }
+.income-table td { padding: 46px 0; border-top: 1px solid var(--pitch-line); font-size: 32px; vertical-align: middle; }
+.income-table tbody tr:last-child { border-bottom: 1px solid var(--pitch-line); }
 .income-table td:first-child { width: 440px; font-weight: 700; }
 .income-table td:nth-child(2) { width: 670px; }
-.income-table td:last-child { color: var(--pitch-muted); font-size: 26px; }
-.income-table strong { font-size: 57px; color: var(--pitch-teal); font-weight: 800; letter-spacing: -.04em; }
-.monitor-plan { background: var(--pitch-light); padding: 28px 34px; margin-top: 34px; }
-.monitor-plan h3 { font-size: 29px; }
-.monitor-plan p { margin-top: 12px; font-size: 25px; color: var(--pitch-muted); white-space: nowrap; }
+.income-table td:last-child { color: var(--pitch-muted); font-size: 28px; }
+.income-table strong { display: block; font-size: 80px; line-height: 1.1; color: var(--pitch-teal); font-weight: 800; letter-spacing: -.04em; }
 
 .curriculum-layout { display: grid; grid-template-columns: 820px 1fr; gap: 65px; margin-top: 36px; }
 .curriculum-copy > div { border-top: 1px solid var(--pitch-line); padding: 16px 0; }
