@@ -86,16 +86,14 @@ The main branch's 100 certified trainees figure refers to the broader academy de
 ## Images, video and branding
 
 - Slide 1: media/image75.jpeg, trainer-led window tint demonstration from the existing deck.
-- Slide 4: media/orang-asli-trainer-briefing.png, the owner's on-site photograph of a trainer briefing programme participants.
-- Slide 6: media/orang-asli-community-group.png, the owner's group photograph of UTM, P10X Academy and community programme participants.
-- Slide 8: media/orang-asli-guided-practice.png, the owner's photograph of guided window film application during the programme. The caption does not describe the building windows as vehicle windows.
+- Slide 4: media/image76.jpeg, academy training photograph from the existing deck.
+- Slide 6: .media/images/image_005.png, community photograph supplied by the owner. Its exact date is not assigned.
+- Slide 8: existing detailing, tint, PPF and wrapping photographs.
 - Slide 9: .media/images/image_003.jpeg, November 2025 intake photograph from the verified UTM report. It is not presented as a graduation photograph.
 - Slide 10: existing media/Video1.mp4 and .media/images/image_001.jpg poster. The owner identifies the speaker as Ajen Azlan, an Orang Asli person working in this industry.
 - Slide 10 also includes media/kampung-lembah-pangsun-academy.mp4, supplied by the owner from Downloads. The owner identifies it as the P10X Academy video at Kampung Lembah Pangsun. It is a 29.3-second, 720 × 1280 portrait clip, copied without altering its footage or audio. The poster is extracted at two seconds. No exact event date is assigned to this video.
 
 The CEO title and presenter name follow the owner's instruction. The deck does not claim LinkedIn independently verifies this title.
-
-The three on-site photographs were supplied together in the conversation and imported from the original attached image data. Their pixels are unchanged; CSS crops frame the participants and practical activity. No new date or attendance claim is assigned in their captions. The group photograph's banner reads 4 October 2025, while the owner supplied 8 October 2025 for the UTM community programme in the timeline. The photo is presented as general programme evidence without equating these dates or revising the owner's timeline.
 
 UTM's logo comes from its [official identity page](https://corporate.utm.my/utm-identity/). The P10X logo comes from the existing deck. Fonts and icons remain bundled locally with their licences.
 
