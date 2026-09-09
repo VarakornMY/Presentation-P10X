@@ -163,6 +163,10 @@ deck-stage { background: #e9eeea; --pitch-paper: #faf9f4; --pitch-ink: #173b39; 
 .cover-training-caption span { display: block; margin-top: 12px; font-size: 23px; color: var(--pitch-muted); white-space: nowrap; }
 .initiative-objectives { margin-top: 35px; }
 .initiative-objectives li { padding: 21px 0 24px; }
+.initiative-photo-layout { display: grid; grid-template-columns: 1180px 480px; gap: 60px; margin-top: 35px; }
+.initiative-photo-layout .initiative-objectives { margin-top: 0; }
+.initiative-photo-layout .initiative-objectives li { padding: 32px 0 34px; }
+.initiative-practice-photo img { width: 480px; height: 640px; object-fit: cover; border-radius: 3px; }
 
 .milestone-table, .income-table { width: 100%; border-collapse: collapse; margin-top: 34px; }
 .milestone-table th, .income-table th { padding: 0 0 15px; text-align: left; font-size: 18px; color: var(--pitch-teal); text-transform: uppercase; letter-spacing: .07em; }

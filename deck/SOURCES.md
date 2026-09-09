@@ -86,6 +86,7 @@ The main branch's 100 certified trainees figure refers to the broader academy de
 ## Images, video and branding
 
 - Slide 1: media/image75.jpeg, trainer-led window tint demonstration from the existing deck.
+- Slide 2: media/orang-asli-guided-practice.png, the owner's on-site photograph of guided window film application, placed beside the four programme objectives. No event date is assigned.
 - Slide 4: media/image76.jpeg, academy training photograph from the existing deck.
 - Slide 6: .media/images/image_005.png, community photograph supplied by the owner. Its exact date is not assigned.
 - Slide 8: existing detailing, tint, PPF and wrapping photographs.
