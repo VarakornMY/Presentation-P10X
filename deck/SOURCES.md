@@ -56,9 +56,9 @@ For this review draft, the series is explicitly treated as a proposed annual int
 The owner confirmed the team-supplied amounts:
 - 6–12 months: above RM2,000.
 - 12–15 months: RM2,500.
-- 18–24 months: RM2,000.
+- 18–24 months: RM3,000.
 
-The lower amount at the final checkpoint is retained exactly. It is not relabelled as a minimum or converted into a rising earnings curve.
+The owner subsequently corrected the 18–24 month benchmark to RM3,000. This supersedes the earlier RM2,000 figure for that checkpoint.
 
 The starting job-matching target is RM2,000 monthly basic salary. The follow-up salary amounts are benchmarks, not guarantees or reported outcomes. The owner did not clarify whether the follow-up values refer to basic salary or total earnings, or whether timing begins at enrolment or placement. Slide 7 proposes counting months after placement and confirming the salary measure and baseline when employment begins.
 
