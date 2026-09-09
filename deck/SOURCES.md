@@ -93,6 +93,8 @@ The main branch's 100 certified trainees figure refers to the broader academy de
 - Slide 10: existing media/Video1.mp4 and .media/images/image_001.jpg poster. The owner identifies the speaker as Ajen Azlan, an Orang Asli person working in this industry.
 - Slide 10 also includes media/kampung-lembah-pangsun-academy.mp4, supplied by the owner from Downloads. The owner identifies it as the P10X Academy video at Kampung Lembah Pangsun. It is a 29.3-second, 720 × 1280 portrait clip, copied without altering its footage or audio. The poster is extracted at two seconds. No exact event date is assigned to this video.
 
+- Slide 11: media/orang-asli-community-group.png, the group photograph supplied by the owner, shown only on the closing slide. The original image is unchanged, with a CSS crop to frame the group. No event date is assigned to this photograph. Its banner reads 4 October 2025; the owner's separate 8 October 2025 timeline entry remains unchanged.
+
 The CEO title and presenter name follow the owner's instruction. The deck does not claim LinkedIn independently verifies this title.
 
 UTM's logo comes from its [official identity page](https://corporate.utm.my/utm-identity/). The P10X logo comes from the existing deck. Fonts and icons remain bundled locally with their licences.

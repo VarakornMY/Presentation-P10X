@@ -258,6 +258,16 @@ deck-stage { background: #e9eeea; --pitch-paper: #faf9f4; --pitch-ink: #173b39; 
 .closing-invitation strong { display: block; font-size: 38px; letter-spacing: -.02em; }
 .closing-invitation > span { display: block; margin-top: 15px; font-size: 27px; color: var(--pitch-muted); }
 
+/* Closing slide: community photograph with the existing shared ambition. */
+.closing-with-photo { grid-template-columns: 730px 930px; gap: 60px; margin-top: 32px; }
+.closing-group-photo img { width: 730px; height: 350px; object-fit: cover; object-position: 50% 72%; border-radius: 3px; }
+.closing-with-photo .closing-commitment { display: grid; grid-template-columns: 180px 1fr; column-gap: 24px; padding-top: 22px; align-items: center; }
+.closing-with-photo .closing-commitment .small-label { grid-column: 2; font-size: 18px; }
+.closing-with-photo .closing-commitment > strong { grid-column: 1; grid-row: 1 / 4; font-size: 100px; margin-top: 0; }
+.closing-with-photo .closing-commitment h3 { grid-column: 2; font-size: 32px; margin-top: 5px; }
+.closing-with-photo .closing-commitment > p:last-child { grid-column: 2; font-size: 22px; margin-top: 7px; white-space: nowrap; }
+.closing-with-photo + .closing-invitation { margin-top: 28px; padding: 26px 38px; }
+
 /* Participant story and community video retain their original aspect ratios. */
 .dual-video-layout { display: grid; grid-template-columns: 1050px 610px; gap: 60px; margin-top: 34px; }
 .video-story h3 { font-size: 32px; line-height: 1.2; white-space: nowrap; }
