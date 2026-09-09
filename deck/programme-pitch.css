@@ -151,3 +151,102 @@ deck-stage { background: #e9eeea; --pitch-paper: #faf9f4; --pitch-ink: #173b39; 
 .partner-invitation p { margin-top: 15px; font-size: 19px; line-height: 1.4; color: var(--pitch-muted); white-space: nowrap; }
 .impact-film .vexpand { background: #177e83; }
 @media print { .pitch-slide { break-after: page; } .pitch-slide .up { animation: none !important; opacity: 1 !important; transform: none !important; } }
+
+/* Revised eleven-slide partnership pitch. */
+.revision-slide .headline { font-size: 62px; white-space: nowrap; text-wrap: initial; }
+.revision-slide .intro { font-size: 27px; white-space: nowrap; max-width: none; }
+.revision-slide .slide-note { position: absolute; left: 100px; right: 100px; bottom: 91px; font-size: 18px; line-height: 1.35; color: var(--pitch-muted); }
+.small-label { display: block; font-size: 19px; color: var(--pitch-teal); font-weight: 800; letter-spacing: .075em; text-transform: uppercase; }
+.revision-cover .community-hero { height: 625px; object-position: 57% 50%; }
+.cover-training-caption { border-top: 1px solid #b7d0c6; margin-top: 27px; padding-top: 24px; }
+.cover-training-caption strong { display: block; font-size: 32px; letter-spacing: -.035em; white-space: nowrap; }
+.cover-training-caption span { display: block; margin-top: 12px; font-size: 23px; color: var(--pitch-muted); white-space: nowrap; }
+.initiative-objectives { margin-top: 35px; }
+.initiative-objectives li { padding: 21px 0 24px; }
+
+.milestone-table, .income-table { width: 100%; border-collapse: collapse; margin-top: 34px; }
+.milestone-table th, .income-table th { padding: 0 0 15px; text-align: left; font-size: 18px; color: var(--pitch-teal); text-transform: uppercase; letter-spacing: .07em; }
+.milestone-table td { padding: 17px 0; border-top: 1px solid var(--pitch-line); font-size: 24px; white-space: nowrap; }
+.milestone-table td:first-child { width: 220px; font-weight: 800; color: var(--pitch-teal); }
+.milestone-table td:nth-child(2) { width: 630px; font-weight: 700; }
+.milestone-table td:last-child { color: var(--pitch-muted); font-size: 23px; }
+.undated-activities { background: var(--pitch-light); padding: 24px 30px; margin-top: 30px; }
+.undated-activities > div { display: flex; justify-content: space-between; gap: 25px; margin-top: 17px; font-size: 24px; font-weight: 700; }
+
+.strategy-layout { display: grid; grid-template-columns: 1090px 565px; gap: 65px; margin-top: 44px; }
+.strategy-list { list-style: none; margin: 0; padding: 0; }
+.strategy-list li { display: grid; grid-template-columns: 68px 1fr; gap: 20px; border-top: 1px solid var(--pitch-line); padding: 22px 0; }
+.strategy-list li > span { font-size: 35px; color: var(--pitch-teal); font-weight: 800; }
+.strategy-list h3 { font-size: 31px; line-height: 1.2; }
+.strategy-list p { margin-top: 10px; font-size: 24px; color: var(--pitch-muted); white-space: nowrap; }
+.strategy-photo img { width: 565px; height: 600px; object-fit: cover; object-position: 55% 50%; border-radius: 3px 3px 65px 3px; }
+.strategy-photo figcaption { margin-top: 17px; font-size: 21px; color: var(--pitch-muted); white-space: nowrap; }
+
+.impact-plan-layout { display: grid; grid-template-columns: 445px 1fr; gap: 65px; margin-top: 45px; align-items: end; }
+.commitment-total { padding-bottom: 8px; }
+.commitment-total > strong { display: block; color: var(--pitch-teal); font-size: 180px; font-weight: 800; letter-spacing: -.075em; line-height: 1; }
+.commitment-total h3 { margin-top: 17px; font-size: 33px; }
+.commitment-total > p { margin-top: 12px; font-size: 24px; color: var(--pitch-muted); }
+.impact-track { border-top: 1px solid var(--pitch-line); margin-top: 33px; padding-top: 23px; display: flex; flex-direction: column; gap: 10px; font-size: 25px; color: var(--pitch-muted); }
+.intake-chart > figcaption { font-size: 27px; font-weight: 700; display: flex; justify-content: space-between; align-items: center; }
+.intake-chart > figcaption span { font-size: 20px; font-weight: 400; color: var(--pitch-muted); }
+.intake-bars { height: 456px; display: grid; grid-template-columns: repeat(6,1fr); gap: 37px; align-items: end; margin-top: 22px; padding: 0 18px; }
+.intake-bar { display: flex; flex-direction: column; align-items: center; }
+.intake-bar strong { font-size: 32px; line-height: 1.1; color: var(--pitch-ink); margin-bottom: 9px; }
+.bar-column { width: 100%; max-width: 118px; background: #438f8c; }
+.intake-bar:first-child .bar-column { background: #aac9bc; }
+.intake-bar > span { font-size: 24px; line-height: 1.2; font-weight: 700; padding: 15px 0; }
+.light-statement { margin-top: 30px; padding: 22px 30px; background: var(--pitch-light); display: flex; gap: 40px; align-items: center; }
+.light-statement strong { font-size: 25px; white-space: nowrap; }
+.light-statement p { font-size: 24px; color: var(--pitch-muted); white-space: nowrap; }
+
+.progress-layout { display: grid; grid-template-columns: 730px 1fr; gap: 65px; margin-top: 44px; }
+.progress-photo img { width: 730px; height: 450px; object-fit: cover; border-radius: 3px; }
+.progress-photo figcaption { margin-top: 15px; font-size: 22px; color: var(--pitch-muted); }
+.progress-details > div, .graduate-steps > div, .closing-priorities > div { position: relative; padding: 20px 0 23px 63px; border-top: 1px solid var(--pitch-line); }
+.progress-details > div > span, .graduate-steps > div > span, .closing-priorities > div > span { position: absolute; left: 0; top: 20px; font-size: 27px; color: var(--pitch-teal); font-weight: 800; }
+.progress-details h3, .graduate-steps h3, .closing-priorities h3 { font-size: 31px; line-height: 1.2; white-space: nowrap; }
+.progress-details p { margin-top: 12px; font-size: 23px; color: var(--pitch-muted); white-space: nowrap; }
+.progress-baseline { display: flex; gap: 85px; margin-top: 28px; padding: 20px 30px; background: var(--pitch-light); }
+.progress-baseline strong { font-size: 59px; line-height: 1.1; letter-spacing: -.04em; color: var(--pitch-teal); }
+.progress-baseline span { font-size: 26px; font-weight: 500; letter-spacing: 0; color: var(--pitch-ink); margin-left: 15px; }
+
+.income-table { margin-top: 48px; }
+.income-table td { padding: 28px 0; border-top: 1px solid var(--pitch-line); font-size: 29px; }
+.income-table td:first-child { width: 440px; font-weight: 700; }
+.income-table td:nth-child(2) { width: 670px; }
+.income-table td:last-child { color: var(--pitch-muted); font-size: 26px; }
+.income-table strong { font-size: 57px; color: var(--pitch-teal); font-weight: 800; letter-spacing: -.04em; }
+.monitor-plan { background: var(--pitch-light); padding: 28px 34px; margin-top: 34px; }
+.monitor-plan h3 { font-size: 29px; }
+.monitor-plan p { margin-top: 12px; font-size: 25px; color: var(--pitch-muted); white-space: nowrap; }
+
+.curriculum-layout { display: grid; grid-template-columns: 820px 1fr; gap: 65px; margin-top: 36px; }
+.curriculum-copy > div { border-top: 1px solid var(--pitch-line); padding: 16px 0; }
+.curriculum-copy .small-label { line-height: 1.2; }
+.curriculum-copy h3 { margin-top: 9px; font-size: 31px; line-height: 1.2; }
+.curriculum-copy p { margin-top: 7px; font-size: 24px; line-height: 1.3; color: var(--pitch-muted); white-space: nowrap; }
+.curriculum-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 25px; }
+.curriculum-photos img { width: 100%; height: 197px; object-fit: cover; border-radius: 3px; }
+.curriculum-photos figcaption { margin-top: 10px; font-size: 23px; font-weight: 700; }
+.training-process { display: flex; justify-content: space-between; background: var(--pitch-light); margin-top: 28px; padding: 27px 30px; font-size: 25px; font-weight: 700; color: var(--pitch-teal); }
+.training-process span + span { border-left: 1px solid #a8c9be; padding-left: 38px; }
+
+.graduate-layout { display: grid; grid-template-columns: 735px 1fr; gap: 65px; margin-top: 40px; }
+.graduate-photo img { width: 735px; height: 466px; object-fit: cover; border-radius: 3px; }
+.graduate-photo figcaption { margin-top: 16px; font-size: 22px; color: var(--pitch-muted); }
+.graduate-steps > div { padding-top: 24px; padding-bottom: 25px; }
+.graduate-steps p { margin-top: 12px; font-size: 24px; color: var(--pitch-muted); white-space: nowrap; }
+.employer-line { border-top: 1px solid var(--pitch-line); display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-top: 35px; padding: 26px 0; }
+.employer-line strong { font-size: 26px; }
+
+.collaboration-close { display: grid; grid-template-columns: 630px 1fr; gap: 85px; margin-top: 57px; }
+.closing-commitment { padding: 17px 0 0; }
+.closing-commitment > strong { display: block; font-size: 184px; letter-spacing: -.065em; line-height: 1; font-weight: 800; color: var(--pitch-teal); margin-top: 16px; }
+.closing-commitment h3 { font-size: 43px; margin-top: 16px; }
+.closing-commitment > p:last-child { margin-top: 15px; font-size: 25px; color: var(--pitch-muted); }
+.closing-priorities > div { padding-top: 26px; padding-bottom: 30px; }
+.closing-priorities p { margin-top: 14px; font-size: 25px; color: var(--pitch-muted); white-space: nowrap; }
+.closing-invitation { margin-top: 48px; padding: 35px 38px; background: var(--pitch-light); }
+.closing-invitation strong { display: block; font-size: 38px; letter-spacing: -.02em; }
+.closing-invitation > span { display: block; margin-top: 15px; font-size: 27px; color: var(--pitch-muted); }
