@@ -15,7 +15,7 @@ The presentation owner's teammate feedback supplies the revised structure and pr
 7. Expected salary benchmarks and a proposed monitoring approach.
 8. Seven-month skills transfer process, using the existing academy curriculum.
 9. Intended graduation, certification and employment pathway.
-10. Ajen Azlan's existing video.
+10. Ajen Azlan's existing video alongside the owner's Kampung Lembah Pangsun academy programme video.
 11. Invitation to UTM to develop the next phase together.
 
 English is used throughout, retaining Orang Asli, location names and established Malaysian qualification and agency abbreviations. Che Salwani appears as presenter on the cover only.
@@ -32,6 +32,8 @@ English is used throughout, retaining Orang Asli, location names and established
 - 28 August 2026: new trainee intake and registration at P10X Academy.
 
 Slide 3 follows the owner's latest eight-item list exactly in sequence. The owner subsequently supplied 27 September for the community hall programme and 8 October for the UTM community programme. Both use 2025, consistent with their position between the September 2025 initiation and November 2025 registration. The earlier separate entry for initial coordination meetings has been removed.
+
+At the owner's request, the two empty detail cells are filled with concise descriptions of the listed activities: initiation of the Orang Asli TVET programme and UTM engagement with the Orang Asli community. No additional event, attendance figure or outcome is asserted.
 
 The project initiation date is not described as the first-ever UTM engagement with Orang Asli communities. The November event is not labelled the academy's first-ever Orang Asli intake.
 
@@ -89,6 +91,7 @@ The main branch's 100 certified trainees figure refers to the broader academy de
 - Slide 8: existing detailing, tint, PPF and wrapping photographs.
 - Slide 9: .media/images/image_003.jpeg, November 2025 intake photograph from the verified UTM report. It is not presented as a graduation photograph.
 - Slide 10: existing media/Video1.mp4 and .media/images/image_001.jpg poster. The owner identifies the speaker as Ajen Azlan, an Orang Asli person working in this industry.
+- Slide 10 also includes media/kampung-lembah-pangsun-academy.mp4, supplied by the owner from Downloads. The owner identifies it as the P10X Academy video at Kampung Lembah Pangsun. It is a 29.3-second, 720 × 1280 portrait clip, copied without altering its footage or audio. The poster is extracted at two seconds. No exact event date is assigned to this video.
 
 The CEO title and presenter name follow the owner's instruction. The deck does not claim LinkedIn independently verifies this title.
 
@@ -98,6 +101,6 @@ UTM's logo comes from its [official identity page](https://corporate.utm.my/utm-
 
 Open index.html in a browser. Navigate with arrow keys; Home returns to the cover. The eleven-slide deck is editable HTML/CSS. The previous shareholder deck remains in an inactive template for recovery.
 
-Click Ajen's play button on Slide 10 to start with sound. Leaving the slide pauses playback. Keep deck, media and .media folders together when sharing the presentation.
+Slide 10 has separate play controls for Ajen's story and the academy community programme. Playing one pauses the other. Each can be enlarged, and leaving the slide pauses playback and closes any enlarged player. Keep deck, media and .media folders together when sharing the presentation.
 
 The UTM invitation is proposed collaboration copy, with no agreed funding, guaranteed employment or claimed new UTM commitment.

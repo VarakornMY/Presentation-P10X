@@ -1064,9 +1064,9 @@ deck-stage[data-motion="calm"] .road { --T: 1.2s; }
     <table class="milestone-table">
       <thead><tr><th>Date</th><th>Programme activity</th><th>Details</th></tr></thead>
       <tbody>
-        <tr><td>25 September 2025</td><td>Project initiation</td><td></td></tr>
+        <tr><td>25 September 2025</td><td>Project initiation</td><td>Initiation of the Orang Asli TVET programme</td></tr>
         <tr><td>27 September 2025</td><td>Kampung Lembah Pangsun community hall</td><td>Orang Asli engagement and TVET introduction in Sungai Pangsun</td></tr>
-        <tr><td>8 October 2025</td><td>Community programme at UTM</td><td></td></tr>
+        <tr><td>8 October 2025</td><td>Community programme at UTM</td><td>UTM engagement with the Orang Asli community</td></tr>
         <tr><td>25 November 2025</td><td>Orang Asli student registration and handover</td><td>With UTM at P10X Academy</td></tr>
         <tr><td>27 November 2025</td><td>JAKOA Selangor permission letter</td><td>Permission to carry out the project</td></tr>
         <tr><td>4 June 2026</td><td>Orang Asli trainee supervision</td><td>Window tint demonstration by Orang Asli youth for new students</td></tr>
@@ -1192,18 +1192,27 @@ deck-stage[data-motion="calm"] .road { --T: 1.2s; }
   </section>
 
   <!-- 10 · VIDEO IMPACT -->
-  <section class="slide pitch-slide revision-slide " data-label="Video impact">
+  <section class="slide pitch-slide revision-slide dual-video-slide" data-label="Video impact">
     <p class="eyebrow">Video impact</p>
-    <h2 class="headline up">Ajen Azlan: <span class="accent">skills at work</span></h2>
-    <div class="impact-pitch-layout">
-      <figure class="impact-film up" style="--d:.1s">
-        <video src="../media/Video1.mp4" poster="../.media/images/image_001.jpg" playsinline controls preload="none" data-manual-play aria-label="Ajen Azlan shares his experience in automotive aesthetics"></video>
-        <button class="film-play" type="button" aria-label="Play Ajen's story with sound"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" /></svg><span>Play Ajen’s story</span></button>
-        <figcaption>An Orang Asli talent working in automotive aesthetics.</figcaption>
-      </figure>
-      <div class="impact-invitation up" style="--d:.18s">
-        <span class="objective-tag">Participant experience</span><h3>Ajen Azlan</h3><p>Raub, Pahang</p>
-        <div class="partner-invitation"><strong>A personal account of skills at work.</strong><p>Watch Ajen share his experience.</p></div>
+    <h2 class="headline up">Ajen Azlan and <span class="accent">community engagement</span></h2>
+    <div class="dual-video-layout">
+      <div class="video-story up" style="--d:.1s">
+        <h3>Ajen Azlan</h3>
+        <p class="video-context">Participant experience · Raub, Pahang</p>
+        <figure class="impact-film">
+          <video src="../media/Video1.mp4" poster="../.media/images/image_001.jpg" playsinline controls preload="none" data-manual-play aria-label="Ajen Azlan shares his experience in automotive aesthetics"></video>
+          <button class="film-play" type="button" aria-label="Play Ajen's story with sound"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" /></svg><span>Play Ajen’s story</span></button>
+        </figure>
+        <p class="video-caption">An Orang Asli talent working in automotive aesthetics.</p>
+      </div>
+      <div class="video-story academy-story up" style="--d:.18s">
+        <h3>Kampung Lembah Pangsun</h3>
+        <p class="video-context">P10X Academy community programme</p>
+        <figure class="impact-film portrait-film">
+          <video src="../media/kampung-lembah-pangsun-academy.mp4" poster="../media/kampung-lembah-pangsun-poster.jpg" playsinline controls preload="none" data-manual-play aria-label="P10X Academy community programme at Kampung Lembah Pangsun"></video>
+          <button class="film-play" type="button" aria-label="Play the Kampung Lembah Pangsun programme video with sound"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" /></svg><span>Play programme video</span></button>
+        </figure>
+        <p class="video-caption">Engaging the community in TVET opportunities.</p>
       </div>
     </div>
     <footer class="pitch-footer"><span>UTM × P10X ACADEMY</span><span class="number">10 / 11</span></footer>
@@ -2204,7 +2213,10 @@ if (window.lucide) lucide.createIcons();
     const playButton = video.parentElement.querySelector('.film-play');
     if (!playButton) return;
     playButton.addEventListener('click', () => video.play().catch(() => { video.controls = true; }));
-    video.addEventListener('play', () => { playButton.hidden = true; });
+    video.addEventListener('play', () => {
+      stage.querySelectorAll('video[data-manual-play]').forEach((other) => { if (other !== video) other.pause(); });
+      playButton.hidden = true;
+    });
     video.addEventListener('pause', () => { playButton.hidden = false; });
     video.addEventListener('ended', () => { playButton.hidden = false; });
   });
@@ -2251,6 +2263,7 @@ if (window.lucide) lucide.createIcons();
   };
   const open = (video) => {
     sourceVideo = video;
+    document.querySelectorAll('deck-stage video').forEach((other) => other.pause());
     lbVideo.src = video.currentSrc || video.src;
     lb.classList.add('open');
     lbVideo.currentTime = video.currentTime || 0;
@@ -2259,6 +2272,7 @@ if (window.lucide) lucide.createIcons();
   lb.querySelector('.vlb-close').addEventListener('click', close);
   lb.addEventListener('click', (e) => { if (e.target === lb) close(); });
   addEventListener('keydown', (e) => { if (e.key === 'Escape' && lb.classList.contains('open')) close(); });
+  document.querySelector('deck-stage').addEventListener('slidechange', () => { if (lb.classList.contains('open')) close(); });
 
   const enhance = (video) => {
     if (!video || video.dataset.enh) return;

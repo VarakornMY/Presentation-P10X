@@ -257,3 +257,14 @@ deck-stage { background: #e9eeea; --pitch-paper: #faf9f4; --pitch-ink: #173b39; 
 .closing-invitation { margin-top: 48px; padding: 35px 38px; background: var(--pitch-light); }
 .closing-invitation strong { display: block; font-size: 38px; letter-spacing: -.02em; }
 .closing-invitation > span { display: block; margin-top: 15px; font-size: 27px; color: var(--pitch-muted); }
+
+/* Participant story and community video retain their original aspect ratios. */
+.dual-video-layout { display: grid; grid-template-columns: 1050px 610px; gap: 60px; margin-top: 34px; }
+.video-story h3 { font-size: 32px; line-height: 1.2; white-space: nowrap; }
+.video-story .video-context { margin-top: 9px; margin-bottom: 22px; font-size: 22px; line-height: 1.3; color: var(--pitch-muted); white-space: nowrap; }
+.video-story .video-caption { margin-top: 17px; font-size: 22px; line-height: 1.3; color: var(--pitch-muted); white-space: nowrap; }
+.academy-story { text-align: center; }
+.portrait-film { width: 332.4375px; margin: 0 auto !important; }
+.portrait-film video { width: 332.4375px; height: 591px; object-fit: contain; }
+.portrait-film .film-play { width: 292px; justify-content: center; padding: 18px 12px; font-size: 20px; gap: 8px; }
+.portrait-film .film-play svg { width: 23px; height: 23px; }
