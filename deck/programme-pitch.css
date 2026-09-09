@@ -1,0 +1,153 @@
+/* Community partnership pitch. Fixed 1920 × 1080 canvas, scaled by deck-stage. */
+@font-face { font-family: 'DM Sans'; font-style: normal; font-weight: 400; font-display: swap; src: url('fonts/dm-sans-400.ttf') format('truetype'); }
+@font-face { font-family: 'DM Sans'; font-style: normal; font-weight: 500; font-display: swap; src: url('fonts/dm-sans-500.ttf') format('truetype'); }
+@font-face { font-family: 'DM Sans'; font-style: normal; font-weight: 700; font-display: swap; src: url('fonts/dm-sans-700.ttf') format('truetype'); }
+@font-face { font-family: 'DM Sans'; font-style: normal; font-weight: 800; font-display: swap; src: url('fonts/dm-sans-800.ttf') format('truetype'); }
+@font-face { font-family: 'DM Sans'; font-style: normal; font-weight: 900; font-display: swap; src: url('fonts/dm-sans-900.ttf') format('truetype'); }
+html, body { margin: 0; background: #e9eeea; }
+deck-stage { background: #e9eeea; --pitch-paper: #faf9f4; --pitch-ink: #173b39; --pitch-muted: #516761; --pitch-teal: #177e83; --pitch-light: #e1efea; --pitch-line: #c6d9d2; }
+.pitch-slide { display: block; padding: 76px 100px 84px; background: var(--pitch-paper); color: var(--pitch-ink); font-family: 'DM Sans', sans-serif; }
+.pitch-slide *, .pitch-slide *::before, .pitch-slide *::after { box-sizing: border-box; }
+.pitch-slide h1, .pitch-slide h2, .pitch-slide h3, .pitch-slide p, .pitch-slide figure, .pitch-slide blockquote { margin: 0; }
+.pitch-slide img { display: block; max-width: 100%; }
+.pitch-slide a { color: var(--pitch-teal); text-underline-offset: 4px; }
+.pitch-slide .eyebrow { color: var(--pitch-teal); font-size: 21px; line-height: 1.2; letter-spacing: .14em; text-transform: uppercase; font-weight: 800; margin-bottom: 21px; }
+.pitch-slide .headline { font-size: 68px; line-height: 1.08; letter-spacing: -.035em; font-weight: 800; text-wrap: balance; max-width: 1700px; }
+.pitch-slide .intro { margin-top: 22px; color: var(--pitch-muted); font-size: 29px; line-height: 1.4; max-width: 1550px; }
+.pitch-slide .accent { color: var(--pitch-teal); }
+.pitch-footer { position: absolute; bottom: 28px; left: 100px; right: 100px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--pitch-line); padding-top: 16px; font-size: 17px; color: #60776e; letter-spacing: .035em; }
+.pitch-footer .number { color: var(--pitch-teal); font-weight: 800; }
+.pitch-slide .source { font-size: 17px; line-height: 1.35; color: #60776e; }
+
+/* 1: open with people, an explicit programme title, and the speaker. */
+.pitch-cover { padding: 66px 94px 80px; }
+.pitch-cover::after { content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 832px; background: #e1efea; z-index: 0; }
+.pitch-cover > * { position: relative; z-index: 1; }
+.pitch-lockup { display: flex; align-items: center; gap: 24px; height: 82px; }
+.pitch-lockup .utm-logo { display: flex; align-items: center; width: 250px; height: 84px; }
+.pitch-lockup .utm-logo img { width: 250px; height: auto; }
+.pitch-lockup .join { font-size: 35px; color: #85a39b; font-weight: 400; }
+.pitch-lockup .academy-logo-frame { display: block; position: relative; width: 232px; height: 100px; overflow: hidden; }
+.pitch-lockup .academy-logo { position: absolute; width: 346px; max-width: none; height: auto; left: -67px; top: -40px; }
+.pitch-cover-copy { width: 940px; padding-top: 42px; }
+.pitch-cover .eyebrow { margin-bottom: 20px; }
+.pitch-cover .cover-programme { font-size: 55px; font-weight: 800; line-height: 1.075; letter-spacing: -.035em; text-wrap: initial; }
+.pitch-cover .cover-programme .accent { display: block; margin-top: 7px; }
+.pitch-cover .cover-purpose { font-size: 22px; line-height: 1.35; color: var(--pitch-muted); max-width: 940px; margin-top: 25px; white-space: nowrap; }
+.cover-speaker { margin-top: 34px; padding-top: 24px; border-top: 2px solid var(--pitch-line); }
+.cover-speaker .speaker-label { display: block; font-size: 17px; font-weight: 800; color: var(--pitch-teal); letter-spacing: .12em; text-transform: uppercase; margin-bottom: 9px; }
+.cover-speaker strong { display: block; font-size: 30px; letter-spacing: -.02em; }
+.cover-speaker .speaker-role { display: block; color: var(--pitch-muted); font-size: 23px; margin-top: 5px; }
+.cover-partner { font-size: 20px; line-height: 1.45; color: var(--pitch-muted); margin-top: 23px !important; max-width: 865px; }
+.cover-event-line { display: flex; gap: 32px; margin-top: 27px; font-size: 20px; font-weight: 700; color: var(--pitch-ink); }
+.pitch-cover .cover-photos { position: absolute; right: 76px; top: 100px; width: 750px; }
+.cover-photos .community-hero { width: 750px; height: 572px; object-fit: cover; object-position: 50% 50%; border-radius: 3px 3px 80px 3px; }
+.cover-photos .photo-caption { padding: 18px 0 0 3px; font-size: 20px; color: var(--pitch-muted); }
+.cover-photo-bottom { display: grid; grid-template-columns: 270px 1fr; align-items: center; gap: 27px; margin-top: 29px; }
+.cover-photo-bottom img { width: 270px; height: 218px; object-fit: cover; object-position: 50% 38%; border-radius: 3px; }
+.cover-photo-bottom p { font-size: 28px; line-height: 1.19; font-weight: 800; letter-spacing: -.02em; white-space: nowrap; }
+.cover-photo-bottom p span { display: block; font-size: 18px; font-weight: 500; line-height: 1.4; color: var(--pitch-muted); margin-top: 12px; white-space: nowrap; }
+.pitch-cover .pitch-footer { position: absolute; z-index: 2; }
+
+/* 2: participant story and the four reasons to act. */
+.why-pitch .headline { max-width: none; font-size: 56px; white-space: nowrap; }
+.why-pitch-layout { display: grid; grid-template-columns: 830px 1fr; gap: 60px; margin-top: 38px; }
+.participant-photo img { width: 830px; height: 467px; object-fit: cover; object-position: 50% 46%; border-radius: 3px; }
+.participant-photo figcaption { font-size: 19px; line-height: 1.4; color: var(--pitch-muted); margin-top: 13px; }
+.participant-quote { margin-top: 19px !important; font-size: 27px; line-height: 1.2; font-weight: 700; color: var(--pitch-teal); max-width: 830px; white-space: nowrap; }
+.participant-credit { margin-top: 12px !important; font-size: 19px; color: var(--pitch-muted); }
+.why-points { display: grid; grid-template-columns: 1fr; gap: 0; }
+.why-point { display: grid; grid-template-columns: 50px 205px minmax(0, 1fr); gap: 14px; align-items: center; min-height: 82px; padding: 13px 0; border-top: 2px solid var(--pitch-line); }
+.why-point .point-num { color: var(--pitch-teal); font-size: 23px; font-weight: 800; }
+.why-point h3 { margin: 0; font-size: 28px; font-weight: 800; }
+.why-point p { margin: 0; font-size: 18px; line-height: 1.35; color: var(--pitch-muted); white-space: nowrap; }
+.why-outcome { padding: 24px 30px; margin-top: 31px; background: var(--pitch-light); border-radius: 3px; }
+.why-outcome strong { display: block; font-size: 29px; line-height: 1.25; }
+.why-outcome p { margin-top: 10px; font-size: 22px; line-height: 1.4; color: var(--pitch-muted); white-space: nowrap; }
+.why-pitch .source { position: absolute; bottom: 87px; left: 100px; max-width: 1660px; }
+
+/* 3: a single connected route with a visible destination. */
+.route-flow { display: grid; grid-template-columns: repeat(6, 1fr); gap: 26px; margin-top: 76px; position: relative; }
+.route-flow::before { content: ''; position: absolute; top: 45px; left: 36px; right: 38px; height: 3px; background: #84b5aa; }
+.route-stop { position: relative; }
+.route-stop .step { display: grid; place-items: center; width: 90px; height: 90px; border: 2px solid #84b5aa; border-radius: 50%; background: var(--pitch-paper); color: var(--pitch-teal); font-size: 32px; font-weight: 800; }
+.route-stop:last-child .step { background: var(--pitch-teal); border-color: var(--pitch-teal); color: #fff; }
+.route-stop h3 { font-size: 28px; line-height: 1.14; margin-top: 28px; letter-spacing: -.025em; }
+.route-stop p { font-size: 23px; line-height: 1.35; color: var(--pitch-muted); margin-top: 14px; max-width: 246px; }
+.route-destination { display: grid; grid-template-columns: 355px 1fr; gap: 30px; background: var(--pitch-light); margin-top: 68px; padding: 36px 44px; align-items: center; }
+.route-destination .destination-label { font-size: 22px; color: var(--pitch-teal); font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }
+.route-destination p { font-size: 33px; font-weight: 700; letter-spacing: -.025em; line-height: 1.18; white-space: nowrap; }
+.route-note { margin-top: 28px !important; font-size: 24px; color: var(--pitch-muted); }
+
+/* 4: bright photographs with captions outside the image. */
+.skills-strip { display: grid; grid-template-columns: repeat(4,1fr); gap: 28px; margin-top: 36px; }
+.skill-figure img { width: 100%; height: 350px; object-fit: cover; border-radius: 3px; }
+.skill-figure figcaption { padding-top: 23px; }
+.skill-figure h3 { font-size: 31px; line-height: 1.12; letter-spacing: -.025em; min-height: 73px; }
+.skill-figure p { color: var(--pitch-muted); font-size: 23px; line-height: 1.4; margin-top: 12px; }
+.skill-figure p span { display: block; }
+.skills-close { margin-top: 34px !important; padding-top: 22px; border-top: 2px solid var(--pitch-line); color: var(--pitch-teal); font-size: 31px; font-weight: 700; }
+
+/* 5: four full-width programme objectives. */
+.objectives-pitch-layout { margin-top: 38px; }
+.programme-objectives { list-style: none; padding: 0; margin: 0; }
+.programme-objectives li { display: grid; grid-template-columns: 86px 1fr; gap: 21px; padding: 24px 0 26px; border-top: 2px solid var(--pitch-line); }
+.programme-objectives .objective-n { color: var(--pitch-teal); font-size: 43px; font-weight: 800; line-height: 1; }
+.programme-objectives h3 { font-size: 32px; line-height: 1.15; }
+.programme-objectives p { margin-top: 12px; font-size: 24px; line-height: 1.36; color: var(--pitch-muted); white-space: nowrap; }
+
+/* 6: clear ownership, then the shared partnership purpose. */
+.partner-model { display: grid; grid-template-columns: repeat(4,1fr); margin-top: 48px; }
+.partner-role { padding: 0 33px; border-left: 1px solid var(--pitch-line); }
+.partner-role:first-child { padding-left: 0; border-left: 0; }
+.partner-role:last-child { padding-right: 0; }
+.partner-role .role-index { font-size: 24px; color: var(--pitch-teal); font-weight: 800; }
+.partner-role h3 { font-size: 38px; line-height: 1.1; margin-top: 26px; letter-spacing: -.035em; min-height: 88px; }
+.partner-role .role-purpose { font-size: 24px; color: var(--pitch-teal); font-weight: 700; line-height: 1.25; min-height: 64px; margin-top: 10px; }
+.partner-role ul { padding: 0; list-style: none; margin: 20px 0 0; }
+.partner-role li { font-size: 25px; line-height: 1.3; color: var(--pitch-muted); border-top: 1px solid var(--pitch-line); padding: 14px 0; }
+.shared-impact { display: grid; grid-template-columns: repeat(4,1fr); background: var(--pitch-light); margin-top: 40px; }
+.shared-impact span { font-size: 24px; font-weight: 800; color: var(--pitch-teal); padding: 25px 30px; position: relative; }
+.shared-impact span:not(:last-child)::after { content: '→'; position: absolute; right: 25px; color: #78a59b; }
+.partnership-note { font-size: 25px; margin-top: 25px !important; color: var(--pitch-muted); }
+
+/* 7: documented history and current community engagement, kept distinct. */
+.journey-pitch .headline { font-size: 63px; }
+.journey-layout { display: grid; grid-template-columns: 700px 1fr; gap: 64px; margin-top: 38px; }
+.initiative-name { font-size: 30px; line-height: 1.23; font-weight: 800; }
+.initiative-meta { margin-top: 18px !important; font-size: 22px; line-height: 1.4; color: var(--pitch-muted); }
+.journey-timeline { margin-top: 29px; }
+.journey-milestone { padding: 17px 0; border-top: 1px solid var(--pitch-line); display: grid; grid-template-columns: 125px 1fr; gap: 24px; }
+.journey-milestone time { color: var(--pitch-teal); font-size: 22px; font-weight: 800; }
+.journey-milestone h3 { font-size: 27px; line-height: 1.2; }
+.journey-milestone p { color: var(--pitch-muted); font-size: 20px; line-height: 1.35; margin-top: 9px; white-space: nowrap; }
+.journey-photo img { width: 100%; height: 365px; object-fit: cover; object-position: 50% 43%; border-radius: 3px; }
+.journey-photo figcaption { font-size: 19px; color: var(--pitch-muted); padding-top: 12px; }
+.journey-evidence { display: grid; grid-template-columns: 340px 1fr; gap: 26px; margin-top: 21px; align-items: center; }
+.journey-evidence img { width: 340px; height: 205px; object-fit: cover; object-position: 50% 40%; border-radius: 3px; }
+.cohort-stats { display: flex; gap: 32px; }
+.cohort-stats div { flex: 1; }
+.cohort-stats strong { display: block; font-size: 88px; line-height: 1; color: var(--pitch-teal); font-weight: 800; letter-spacing: -.06em; }
+.cohort-stats span { display: block; font-size: 20px; line-height: 1.3; margin-top: 7px; color: var(--pitch-muted); }
+.cohort-caption { font-size: 17px; line-height: 1.35; color: var(--pitch-muted); margin-top: 16px !important; }
+.journey-pitch > .source { position: absolute; left: 100px; right: 100px; bottom: 87px; }
+
+/* 8: the participant speaks; the proposal has an explicit next step. */
+.impact-pitch-layout { display: grid; grid-template-columns: 1050px minmax(0, 1fr); gap: 60px; margin-top: 38px; align-items: start; }
+.impact-film { position: relative; }
+.impact-film video { display: block; width: 1050px; height: 591px; object-fit: contain; background: #e1e8e4; border-radius: 4px; }
+.impact-film figcaption { margin-top: 15px; color: var(--pitch-muted); font-size: 22px; }
+.film-play { position: absolute; top: 258px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 12px; padding: 20px 27px; border: 2px solid #eff9f4; border-radius: 50px; background: var(--pitch-teal); color: #fff; font: 700 24px 'DM Sans', sans-serif; cursor: pointer; box-shadow: 0 6px 26px #173b3926; }
+.film-play svg { width: 28px; height: 28px; fill: currentColor; }
+.film-play:hover { background: #146b70; }
+.film-play:focus-visible { outline: 4px solid #e8b962; outline-offset: 5px; }
+.film-play[hidden] { display: none; }
+.impact-invitation { border-top: 3px solid var(--pitch-teal); padding-top: 24px; }
+.impact-invitation .objective-tag { color: var(--pitch-teal); font-weight: 800; font-size: 21px; letter-spacing: .07em; text-transform: uppercase; }
+.impact-invitation h3 { font-size: 35px; line-height: 1.12; margin-top: 18px; letter-spacing: -.035em; white-space: nowrap; }
+.impact-invitation > p { margin-top: 22px; font-size: 22px; color: var(--pitch-muted); line-height: 1.36; white-space: nowrap; }
+.partner-invitation { background: var(--pitch-light); padding: 28px; margin-top: 33px; }
+.partner-invitation strong { display: block; font-size: 25px; line-height: 1.2; white-space: nowrap; }
+.partner-invitation p { margin-top: 15px; font-size: 19px; line-height: 1.4; color: var(--pitch-muted); white-space: nowrap; }
+.impact-film .vexpand { background: #177e83; }
+@media print { .pitch-slide { break-after: page; } .pitch-slide .up { animation: none !important; opacity: 1 !important; transform: none !important; } }

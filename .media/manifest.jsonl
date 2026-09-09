@@ -1,0 +1,8 @@
+{"id":"image_001","type":"image","path":".media/images/image_001.jpg","source":"ingested","description":"ajen-video-poster.jpg","provenance":{"provider":"local","from":".codex-inspect\\ajen-video-poster.jpg"}}
+{"id":"logo_001","type":"logo","path":".media/images/logo_001.jpg","source":"ingested","description":"utm-logo-reversed.jpg","provenance":{"provider":"local","from":".codex-inspect\\utm-logo-reversed.jpg"}}
+{"id":"image_002","type":"image","path":".media/images/image_002.jpeg","source":"ingested","description":"utm-orang-asli-tint.jpeg","provenance":{"provider":"local","from":".codex-inspect\\utm-orang-asli-tint.jpeg"}}
+{"id":"image_003","type":"image","path":".media/images/image_003.jpeg","source":"ingested","description":"utm-p10x-placement.jpeg","provenance":{"provider":"local","from":".codex-inspect\\utm-p10x-placement.jpeg"}}
+{"id":"image_004","type":"image","path":".media/images/image_004.png","source":"ingested","description":"community-1.png","provenance":{"provider":"local","from":".deck-review/community-1.png"}}
+{"id":"image_005","type":"image","path":".media/images/image_005.png","source":"ingested","description":"community-2.png","provenance":{"provider":"local","from":".deck-review/community-2.png"}}
+{"id":"image_006","type":"image","path":".media/images/image_006.png","source":"ingested","description":"community-3.png","provenance":{"provider":"local","from":".deck-review/community-3.png"}}
+{"id":"logo_002","type":"logo","path":".media/images/logo_002.png","source":"ingested","description":"LOGO UTM_black.png","provenance":{"provider":"local","from":".deck-review/utm-logo/LOGO UTM_black.png"}}

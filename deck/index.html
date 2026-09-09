@@ -3,11 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>P10X Academy — Shareholder Briefing (Infographic)</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,900&display=swap" rel="stylesheet">
-<script src="https://unpkg.com/lucide@0.462.0/dist/umd/lucide.min.js"></script>
+<title>UTM × P10X Academy — Orang Asli TVET Programme</title>
+<script src="vendor/lucide.min.js"></script>
 <style>
 /* 3M Circular TT — licensed font: picked up from the viewer's system if installed.
    Drop the licensed .woff2 files next to this page and extend these @font-face rules
@@ -129,6 +126,22 @@ deck-stage { counter-reset: page; }
 .badge { display: inline-flex; align-items: center; gap: 12px; padding: 16px 28px; border-radius: 999px;
   border: 1.5px solid rgba(255, 255, 255, 0.28); color: #fff; font-size: 24px; font-weight: 500; backdrop-filter: blur(6px); }
 .badge svg { width: 26px; height: 26px; stroke: var(--teal); }
+
+/* UTM × P10X Academy collaboration cover */
+.cover-collab .coverbg img { object-position: 58% 50%; }
+.cover-collab .cover-shade { background: linear-gradient(90deg, rgba(8, 18, 24, 0.96) 0%, rgba(8, 18, 24, 0.89) 43%, rgba(8, 18, 24, 0.28) 75%, rgba(8, 18, 24, 0.06) 100%); }
+.collab-lockup { display: flex; align-items: center; gap: 18px; color: #fff; font-size: 28px; font-weight: 800; letter-spacing: 0.04em; }
+.collab-lockup .utmlabel { color: #f7b733; }
+.collab-lockup .p10xlabel { color: #70d0dc; }
+.collab-lockup .industrylabel { color: rgba(255,255,255,0.86); }
+.collab-lockup .join { color: rgba(255,255,255,0.48); font-size: 30px; font-weight: 400; }
+.cover-collab .display { max-width: 1030px; font-size: 76px; line-height: 1.04; }
+.cover-collab .tagline { max-width: 960px; font-size: 29px; line-height: 1.38; margin-top: 26px; }
+.cover-detail { display: grid; grid-template-columns: 1fr; gap: 6px; max-width: 1040px; margin-top: 46px; padding-top: 26px; border-top: 1px solid rgba(255,255,255,0.28); }
+.cover-detail .label { color: var(--teal); font-size: 20px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+.cover-detail .value { color: rgba(255,255,255,0.9); font-size: 24px; line-height: 1.45; }
+.cover-event { display: flex; gap: 34px; margin-top: 32px; color: rgba(255,255,255,0.82); font-size: 21px; font-weight: 600; }
+.cover-event span + span { padding-left: 34px; border-left: 1px solid rgba(255,255,255,0.35); }
 
 /* — contents — */
 .toc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 72px; }
@@ -633,23 +646,565 @@ deck-stage[data-motion="calm"] .road { --T: 1.2s; }
   [data-deck-active] .big-n { animation: strokein 1s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
   @keyframes strokein { from { opacity: 0; letter-spacing: 0.05em; } to { opacity: 1; letter-spacing: -0.02em; } }
 }
+
+/* ============ UTM x P10X ORANG ASLI PROGRAMME ============ */
+.programme-slide {
+  --pad-x: 112px;
+  --pad-top: 76px;
+  --pad-bottom: 76px;
+  background:
+    radial-gradient(780px 520px at 102% -12%, rgba(43, 165, 180, 0.16), transparent 70%),
+    #f3f7f6;
+}
+.programme-slide::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 12px;
+  background: linear-gradient(180deg, #f1b434 0 18%, var(--teal) 18% 100%);
+}
+.programme-slide .p-kicker {
+  margin: 0 0 18px;
+  color: var(--teal-deep);
+  font-size: 21px;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.programme-slide .p-title {
+  margin: 0;
+  max-width: 1580px;
+  color: #132226;
+  font-size: 68px;
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+  font-weight: 900;
+}
+.programme-slide .p-lead {
+  margin: 18px 0 0;
+  max-width: 1380px;
+  color: rgba(19, 34, 38, 0.68);
+  font-size: 27px;
+  line-height: 1.42;
+}
+.programme-slide .stackline { display: block; }
+.programme-slide .p-foot {
+  position: absolute;
+  left: 112px;
+  right: 112px;
+  bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgba(19, 34, 38, 0.45);
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+.programme-slide .p-foot .num::before {
+  content: counter(page, decimal-leading-zero);
+  color: var(--teal-deep);
+}
+
+/* Cover */
+.programme-cover {
+  justify-content: center;
+  padding: 68px 112px;
+  color: #f6fbfb;
+  background: #0b171b;
+}
+.programme-cover::before { display: none; }
+.programme-cover .coverbg { inset: 0 auto auto 0; width: 1920px; height: 1080px; }
+.programme-cover .coverbg img { object-position: 64% 50%; }
+.programme-cover .cover-shade {
+  background:
+    linear-gradient(90deg, rgba(7, 18, 22, 0.98) 0%, rgba(7, 18, 22, 0.93) 45%, rgba(7, 18, 22, 0.46) 72%, rgba(7, 18, 22, 0.12) 100%),
+    linear-gradient(0deg, rgba(7, 18, 22, 0.35), transparent 40%);
+}
+.programme-cover .cover-content { position: relative; width: 980px; }
+.programme-cover .programme-lockup {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  min-height: 64px;
+  margin-bottom: 38px;
+}
+.programme-lockup .utm-logo-frame {
+  display: block;
+  width: 177px;
+  height: 76px;
+  overflow: hidden;
+  flex: none;
+  background: #111;
+}
+.programme-lockup .utm-logo-frame img { display: block; width: auto; height: 76px; max-width: none; }
+.programme-lockup .utm-mark {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #fff;
+}
+.programme-lockup .utm-monogram {
+  color: #f1b434;
+  font-family: Georgia, serif;
+  font-size: 48px;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+.programme-lockup .utm-name {
+  max-width: 176px;
+  font-size: 15px;
+  line-height: 1.05;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.programme-lockup .lockup-x { color: rgba(255,255,255,0.48); font-size: 34px; font-weight: 400; }
+.programme-lockup .p10x-mark { width: 178px; height: 58px; object-fit: contain; filter: brightness(0) invert(1); }
+.programme-lockup .academy-word { color: rgba(255,255,255,0.82); font-size: 18px; font-weight: 800; letter-spacing: 0.16em; }
+.programme-cover .cover-title {
+  margin: 0;
+  max-width: 960px;
+  color: #fff;
+  font-size: 62px;
+  line-height: 1.01;
+  letter-spacing: -0.03em;
+  font-weight: 900;
+}
+.programme-cover .cover-title .accent { color: #70d0dc; }
+.programme-cover .cover-subtitle {
+  margin: 24px 0 0;
+  max-width: 860px;
+  color: rgba(255,255,255,0.72);
+  font-size: 25px;
+  line-height: 1.35;
+}
+.programme-cover .cover-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 42px;
+  width: 900px;
+  margin-top: 38px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.25);
+}
+.programme-cover .cover-meta .label {
+  display: block;
+  margin-bottom: 7px;
+  color: #70d0dc;
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.programme-cover .cover-meta .value { color: rgba(255,255,255,0.9); font-size: 20px; line-height: 1.38; font-weight: 600; }
+
+/* Why */
+.why-layout {
+  display: grid;
+  grid-template-columns: 0.82fr 1.18fr;
+  gap: 96px;
+  align-items: stretch;
+  margin-top: 56px;
+}
+.why-thesis { display: flex; flex-direction: column; justify-content: space-between; min-height: 610px; padding-right: 34px; }
+.why-thesis .statement { margin: 0; color: #173238; font-size: 36px; line-height: 1.34; font-weight: 700; }
+.why-thesis .statement strong { color: var(--teal-deep); }
+.why-thesis .key-message { margin: 0; padding: 26px 0 0; border-top: 4px solid var(--teal); color: #132226; font-size: 27px; line-height: 1.4; font-weight: 700; }
+.why-list { border-top: 2px solid rgba(19,34,38,0.14); }
+.why-item {
+  display: grid;
+  grid-template-columns: 86px 1fr;
+  gap: 24px;
+  align-items: center;
+  min-height: 146px;
+  border-bottom: 2px solid rgba(19,34,38,0.14);
+}
+.why-item .n { color: var(--teal); font-size: 47px; line-height: 1; font-weight: 900; }
+.why-item h3 { margin: 0 0 8px; color: #132226; font-size: 30px; line-height: 1.1; }
+.why-item p { margin: 0; color: rgba(19,34,38,0.66); font-size: 23px; line-height: 1.35; }
+
+/* Vision */
+.vision-flow {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 14px;
+  margin-top: 116px;
+}
+.vision-flow::before {
+  content: "";
+  position: absolute;
+  left: 7.5%;
+  right: 7.5%;
+  top: 43px;
+  height: 6px;
+  background: linear-gradient(90deg, #f1b434, var(--teal), #17707c);
+  border-radius: 4px;
+}
+.vision-node { position: relative; z-index: 1; text-align: center; }
+.vision-node .dot {
+  display: grid;
+  place-items: center;
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 30px;
+  border: 6px solid #f3f7f6;
+  border-radius: 50%;
+  background: #173238;
+  color: #fff;
+  box-shadow: 0 0 0 4px rgba(43,165,180,0.28);
+  font-size: 26px;
+  font-weight: 900;
+}
+.vision-node:first-child .dot { background: #d59625; box-shadow: 0 0 0 4px rgba(241,180,52,0.32); }
+.vision-node:last-child .dot { background: var(--teal); width: 100px; height: 100px; margin-top: -5px; margin-bottom: 25px; box-shadow: 0 0 0 7px rgba(43,165,180,0.2); }
+.vision-node h3 { margin: 0; color: #132226; font-size: 24px; line-height: 1.12; text-transform: uppercase; letter-spacing: 0.035em; }
+.vision-node p { margin: 13px auto 0; max-width: 235px; color: rgba(19,34,38,0.62); font-size: 20px; line-height: 1.32; }
+.vision-impact {
+  margin-top: 72px;
+  padding: 25px 34px;
+  border-left: 8px solid var(--teal);
+  background: #132226;
+  color: #f6fbfb;
+  font-size: 31px;
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+/* Skills pathway */
+.track-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  height: 570px;
+  margin-top: 40px;
+}
+.track-panel { position: relative; overflow: hidden; margin: 0; background: #132226; }
+.track-panel img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease; }
+.track-panel:hover img { transform: scale(1.04); }
+.track-panel::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(7,18,22,0.96), rgba(7,18,22,0.06) 68%); }
+.track-panel figcaption { position: absolute; z-index: 1; left: 30px; right: 28px; bottom: 27px; color: #fff; }
+.track-panel h3 { margin: 0 0 12px; color: #fff; font-size: 33px; line-height: 1.05; text-transform: uppercase; }
+.track-panel p { margin: 0; color: rgba(255,255,255,0.72); font-size: 20px; line-height: 1.35; }
+.track-message { margin: 28px 0 0; color: var(--teal-deep); font-size: 28px; font-weight: 900; letter-spacing: 0.02em; }
+
+/* Objectives */
+.objective-layout {
+  display: grid;
+  grid-template-columns: 520px 1fr;
+  gap: 84px;
+  align-items: stretch;
+  margin-top: 62px;
+}
+.objective-count {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 650px;
+  padding: 46px;
+  background: #132226;
+  color: #fff;
+}
+.objective-count .v { color: #70d0dc; font-size: 250px; line-height: 0.78; font-weight: 900; letter-spacing: -0.08em; }
+.objective-count .l { margin-top: 38px; color: rgba(255,255,255,0.72); font-size: 27px; line-height: 1.3; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; }
+.objective-list { display: flex; flex-direction: column; justify-content: space-between; border-top: 2px solid rgba(19,34,38,0.16); }
+.objective-row {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 26px;
+  align-items: center;
+  min-height: 205px;
+  border-bottom: 2px solid rgba(19,34,38,0.16);
+}
+.objective-row .n { color: var(--teal); font-size: 54px; font-weight: 900; }
+.objective-row h3 { margin: 0 0 10px; color: #132226; font-size: 30px; line-height: 1.1; text-transform: uppercase; }
+.objective-row p { margin: 0; color: rgba(19,34,38,0.66); font-size: 24px; line-height: 1.38; }
+
+/* Collaboration */
+.collaboration-map {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  margin-top: 72px;
+  padding-top: 58px;
+}
+.collaboration-map::before {
+  content: "";
+  position: absolute;
+  left: 11%;
+  right: 11%;
+  top: 25px;
+  height: 5px;
+  background: rgba(23,112,124,0.32);
+}
+.partner-column { position: relative; min-height: 510px; padding: 38px 26px 30px; border-top: 6px solid var(--teal); background: rgba(255,255,255,0.72); }
+.partner-column::before { content: ""; position: absolute; left: 50%; top: -52px; width: 24px; height: 24px; transform: translateX(-50%); border-radius: 50%; background: var(--teal); box-shadow: 0 0 0 7px #f3f7f6; }
+.partner-column .role { color: var(--teal-deep); font-size: 17px; font-weight: 900; letter-spacing: 0.12em; text-transform: uppercase; }
+.partner-column h3 { margin: 13px 0 28px; color: #132226; font-size: 31px; line-height: 1.08; }
+.partner-column ul { display: grid; gap: 17px; margin: 0; padding: 0; list-style: none; }
+.partner-column li { padding-bottom: 15px; border-bottom: 1px solid rgba(19,34,38,0.12); color: rgba(19,34,38,0.68); font-size: 22px; line-height: 1.2; }
+.impact-chain {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 28px;
+  background: #132226;
+  color: #fff;
+}
+.impact-chain span { padding: 22px 18px; text-align: center; border-right: 1px solid rgba(255,255,255,0.16); font-size: 22px; font-weight: 900; letter-spacing: 0.08em; }
+.impact-chain span:last-child { border-right: 0; color: #70d0dc; }
+
+/* UTM project */
+.programme-project {
+  background: radial-gradient(820px 600px at 100% 0%, rgba(43,165,180,0.2), transparent 68%), #0e1b1f;
+  color: #fff;
+}
+.programme-project::before { background: linear-gradient(180deg, #f1b434 0 28%, #2ba5b4 28% 100%); }
+.programme-project .p-kicker { color: #70d0dc; }
+.programme-project .p-title { max-width: 1700px; color: #fff; font-size: 58px; }
+.project-layout { display: grid; grid-template-columns: 0.92fr 1.08fr; gap: 68px; min-height: 620px; margin-top: 28px; }
+.project-copy { display: flex; flex-direction: column; }
+.project-name { margin: 0; color: #fff; font-size: 34px; line-height: 1.22; font-weight: 800; }
+.project-meta { margin: 20px 0 0; color: rgba(255,255,255,0.64); font-size: 22px; line-height: 1.45; }
+.project-steps { display: grid; gap: 13px; margin-top: 28px; }
+.project-step { display: grid; grid-template-columns: 62px 1fr; gap: 20px; align-items: start; padding-top: 13px; border-top: 1px solid rgba(255,255,255,0.18); }
+.project-step .n { color: #f1b434; font-size: 32px; font-weight: 900; }
+.project-step h3 { margin: 0 0 6px; color: #fff; font-size: 24px; }
+.project-step p { margin: 0; color: rgba(255,255,255,0.64); font-size: 19px; line-height: 1.34; }
+.project-photo { position: relative; overflow: hidden; margin: 0; height: 620px; background: #071216; }
+.project-photo .main-photo { width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; display: block; }
+.project-photo > figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 56px 34px 24px; background: linear-gradient(0deg, rgba(7,18,22,0.96), transparent); color: rgba(255,255,255,0.85); font-size: 19px; line-height: 1.35; }
+.placement-inset { position: absolute; right: 26px; bottom: 76px; width: 350px; padding: 8px 8px 13px; background: #f3f7f6; box-shadow: 0 22px 50px rgba(0,0,0,0.34); }
+.placement-inset img { display: block; width: 100%; height: 198px; object-fit: cover; object-position: 50% 38%; }
+.placement-inset span { display: block; padding: 11px 10px 0; color: #132226; font-size: 16px; line-height: 1.25; font-weight: 800; }
+.project-source { position: absolute; left: 112px; bottom: 56px; z-index: 3; color: rgba(255,255,255,0.42); font-size: 16px; }
+.project-source a { color: #70d0dc; text-decoration: none; }
+.programme-project .p-foot { color: rgba(255,255,255,0.38); }
+.programme-project .p-foot .num::before { color: #70d0dc; }
+
+/* Video impact */
+.programme-impact {
+  display: grid;
+  grid-template-columns: 660px 1fr;
+  gap: 60px;
+  align-items: center;
+  padding: 64px 80px 64px 112px;
+  background: radial-gradient(760px 620px at 12% 100%, rgba(43,165,180,0.23), transparent 70%), #0b171b;
+  color: #fff;
+}
+.programme-impact::before { background: #2ba5b4; }
+.impact-copy .p-kicker { color: #70d0dc; }
+.impact-copy .p-title { color: #fff; font-size: 72px; }
+.impact-copy .impact-role { margin: 20px 0 0; color: rgba(255,255,255,0.62); font-size: 27px; line-height: 1.35; }
+.economic-objective { margin-top: 54px; padding-top: 30px; border-top: 3px solid #f1b434; }
+.economic-objective .n { color: #f1b434; font-size: 24px; font-weight: 900; letter-spacing: 0.12em; text-transform: uppercase; }
+.economic-objective h3 { margin: 12px 0 12px; color: #fff; font-size: 37px; line-height: 1.08; text-transform: uppercase; }
+.economic-objective p { margin: 0; color: rgba(255,255,255,0.72); font-size: 24px; line-height: 1.42; }
+.impact-video { position: relative; overflow: hidden; margin: 0; width: 100%; aspect-ratio: 16 / 9; background: #05090a; box-shadow: 0 28px 70px rgba(0,0,0,0.34); }
+.impact-video video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.impact-video figcaption { position: absolute; left: 24px; bottom: 20px; padding: 11px 16px; background: rgba(7,18,22,0.82); color: #fff; font-size: 18px; font-weight: 700; backdrop-filter: blur(8px); pointer-events: none; }
+.programme-impact .p-foot { left: 112px; right: 80px; color: rgba(255,255,255,0.38); }
+.programme-impact .p-foot .num::before { color: #70d0dc; }
 </style>
+<link rel="stylesheet" href="programme-pitch.css" />
 </head>
 <body>
 <deck-stage width="1920" height="1080" no-rail>
 
   <!-- 1 · COVER -->
-  <section class="slide cover" data-label="Cover">
-    <div class="coverbg"><img src="../media/image1.jpeg" alt="P10X Academy building, Bandar Sunway" /></div>
+  <section class="slide pitch-slide pitch-cover" data-label="Cover">
+    <div class="pitch-lockup up" aria-label="UTM and P10X Academy">
+      <span class="utm-logo"><img src="../.media/images/logo_002.png" alt="Universiti Teknologi Malaysia" /></span>
+      <span class="join">×</span>
+      <span class="academy-logo-frame"><img class="academy-logo" src="../media/image103.png" alt="P10X Academy" /></span>
+    </div>
+    <div class="pitch-cover-copy">
+      <p class="eyebrow up" style="--d:.06s">Academia × Industry × Community</p>
+      <h1 class="cover-programme up" style="--d:.1s">TVET Auto Aesthetics Knowledge Transfer Programme for the <span class="accent">Economic Empowerment of Orang Asli Youth</span></h1>
+      <p class="cover-purpose up" style="--d:.16s">Academia–Industry Collaboration for Sustainable Community Development</p>
+      <div class="cover-speaker up" style="--d:.22s">
+        <span class="speaker-label">Presented by</span>
+        <strong>Che Salwani Enche Mohd Noor</strong>
+        <span class="speaker-role">CEO, P10X Academy</span>
+      </div>
+      <p class="cover-partner">In collaboration with Universiti Teknologi Malaysia (UTM) – MJIIT</p>
+      <div class="cover-event-line"><span>10th September 2026</span><span>P10X Academy, Bandar Sunway</span></div>
+    </div>
+    <div class="cover-photos up" style="--d:.16s">
+      <img class="community-hero" src="../.media/images/image_006.png" alt="P10X Academy holding a discussion with Orang Asli participants and families" />
+      <p class="photo-caption">The journey begins with the community.</p>
+      <div class="cover-photo-bottom">
+        <img src="../media/image75.jpeg" alt="Trainer guiding a participant during practical automotive training" />
+        <p>Skills for a more secure future.<span>From community engagement to industry opportunity.</span></p>
+      </div>
+    </div>
+    <footer class="pitch-footer"><span>UTM × P10X ACADEMY</span><span class="number">01 / 08</span></footer>
+  </section>
+
+  <!-- 2 · WHY THIS PROGRAMME -->
+  <section class="slide pitch-slide why-pitch" data-label="Why This Programme">
+    <p class="eyebrow">Why this programme matters</p>
+    <h2 class="headline up">Skills can open a pathway to <span class="accent">sustainable income.</span></h2>
+    <div class="why-pitch-layout">
+      <div class="up" style="--d:.1s">
+        <figure class="participant-photo">
+          <img src="../.media/images/image_004.png" alt="P10X Academy listening to a young participant and a family member at the Orang Asli community programme" />
+          <figcaption>Listening to participants and families at the community programme.</figcaption>
+        </figure>
+        <blockquote class="participant-quote">“I hope you can become an example to the people in our village.”</blockquote>
+        <p class="participant-credit">Pakcik Zahamin to his son Ronnie, 20, as shared by Che Salwani.</p>
+      </div>
+      <div class="up" style="--d:.18s">
+        <div class="why-points">
+          <div class="why-point"><span class="point-num">01</span><h3>Access</h3><p>Create access to relevant technical and vocational skills.</p></div>
+          <div class="why-point"><span class="point-num">02</span><h3>Skills</h3><p>Develop practical competencies for industry.</p></div>
+          <div class="why-point"><span class="point-num">03</span><h3>Opportunity</h3><p>Connect youth with jobs and entrepreneurship.</p></div>
+          <div class="why-point"><span class="point-num">04</span><h3>Empowerment</h3><p>Build pathways towards sustainable economic participation.</p></div>
+        </div>
+        <div class="why-outcome"><strong>Opportunities that continue beyond the classroom.</strong><p>The programme helps participants put their learning to work.</p></div>
+      </div>
+    </div>
+    <p class="source">Story: <a href="https://my.linkedin.com/in/che-salwani-enche-mohd-noor" target="_blank" rel="noopener">Che Salwani’s public LinkedIn post on the Temuan community</a>. Ronnie’s technician role is expected in May 2027; it is a future milestone.</p>
+    <footer class="pitch-footer"><span>UTM × P10X ACADEMY</span><span class="number">02 / 08</span></footer>
+  </section>
+
+  <!-- 3 · PROGRAMME VISION -->
+  <section class="slide pitch-slide" data-label="Programme Vision">
+    <p class="eyebrow">Programme vision</p>
+    <h2 class="headline up">From knowledge to <span class="accent">economic opportunity.</span></h2>
+    <p class="intro">A connected pathway that helps participants progress from learning a skill to using it in the industry.</p>
+    <div class="route-flow" aria-label="Knowledge to skills, competency, industry, opportunity and economic empowerment">
+      <div class="route-stop up" style="--d:.06s"><span class="step">01</span><h3>Knowledge</h3><p>Academic and technical knowledge</p></div>
+      <div class="route-stop up" style="--d:.12s"><span class="step">02</span><h3>Skills</h3><p>Practical TVET training</p></div>
+      <div class="route-stop up" style="--d:.18s"><span class="step">03</span><h3>Competency</h3><p>Confidence and technical capability</p></div>
+      <div class="route-stop up" style="--d:.24s"><span class="step">04</span><h3>Industry</h3><p>Exposure to real working environments</p></div>
+      <div class="route-stop up" style="--d:.3s"><span class="step">05</span><h3>Opportunity</h3><p>Employment and entrepreneurship</p></div>
+      <div class="route-stop up" style="--d:.36s"><span class="step">06</span><h3>Economic empowerment</h3><p>Pathways to sustainable income</p></div>
+    </div>
+    <div class="route-destination up" style="--d:.42s">
+      <span class="destination-label">The long-term purpose</span>
+      <p>Transforming knowledge into skills, and skills into sustainable opportunities.</p>
+    </div>
+    <p class="route-note">Each stage prepares participants for the next, with academia and industry supporting the journey.</p>
+    <footer class="pitch-footer"><span>UTM × P10X ACADEMY</span><span class="number">03 / 08</span></footer>
+  </section>
+
+  <!-- 4 · AUTO AESTHETICS SKILLS -->
+  <section class="slide pitch-slide" data-label="TVET Auto Aesthetics">
+    <p class="eyebrow">Why TVET auto aesthetics?</p>
+    <h2 class="headline up">Practical skills. <span class="accent">Real industry applications.</span></h2>
+    <p class="intro">Automotive aesthetics offers a skills pathway towards employment, specialist careers and entrepreneurship.</p>
+    <div class="skills-strip">
+      <figure class="skill-figure up" style="--d:.1s"><img src="../media/image57.jpeg" alt="Machine polishing a vehicle" /><figcaption><h3>Car detailing</h3><p><span>Polishing and coating</span><span>Interior and exterior detailing</span></p></figcaption></figure>
+      <figure class="skill-figure up" style="--d:.17s"><img src="../media/image63.jpeg" alt="Applying window tint to a vehicle" /><figcaption><h3>Window tint</h3><p><span>Installation</span><span>Technical application and finishing</span></p></figcaption></figure>
+      <figure class="skill-figure up" style="--d:.24s"><img src="../media/image61.jpeg" alt="Precision application of paint protection film" /><figcaption><h3>Paint protection film (PPF)</h3><p><span>Installation and precision</span><span>Finishing</span></p></figcaption></figure>
+      <figure class="skill-figure up" style="--d:.31s"><img src="../media/image62.jpeg" alt="Applying a coloured vehicle wrap" /><figcaption><h3>Vehicle wrapping</h3><p><span>Wrapping and colour change</span><span>Commercial application</span></p></figcaption></figure>
+    </div>
+    <p class="skills-close">Learn a skill. Build competency. Create an opportunity.</p>
+    <footer class="pitch-footer"><span>UTM × P10X ACADEMY</span><span class="number">04 / 08</span></footer>
+  </section>
+
+  <!-- 5 · PROGRAMME OBJECTIVES -->
+  <section class="slide pitch-slide" data-label="Programme Objectives">
+    <p class="eyebrow">Programme objectives</p>
+    <h2 class="headline up">Programme <span class="accent">objectives</span></h2>
+    <div class="objectives-pitch-layout">
+      <ol class="programme-objectives">
+        <li class="up" style="--d:.08s"><span class="objective-n">01</span><div><h3>Knowledge transfer</h3><p>Transfer relevant TVET Auto Aesthetics knowledge and technical skills to Orang Asli youth.</p></div></li>
+        <li class="up" style="--d:.16s"><span class="objective-n">02</span><div><h3>Skills development</h3><p>Build practical competency through hands-on, industry-oriented training.</p></div></li>
+        <li class="up" style="--d:.24s"><span class="objective-n">03</span><div><h3>Industry exposure</h3><p>Introduce participants to real industry practices, standards and working environments.</p></div></li>
+        <li class="up" style="--d:.32s"><span class="objective-n">04</span><div><h3>Economic empowerment</h3><p>Create pathways towards employment, entrepreneurship and income generation.</p></div></li>
+      </ol>
+    </div>
+    <footer class="pitch-footer"><span>UTM × P10X ACADEMY</span><span class="number">05 / 08</span></footer>
+  </section>
+
+  <!-- 6 · COLLABORATION MODEL -->
+  <section class="slide pitch-slide" data-label="Collaboration Model">
+    <p class="eyebrow">Collaboration model</p>
+    <h2 class="headline up">Academia × Industry × <span class="accent">Community</span></h2>
+    <div class="partner-model">
+      <div class="partner-role up" style="--d:.08s"><span class="role-index">01</span><h3>UTM / MJIIT</h3><p class="role-purpose">Knowledge and innovation</p><ul><li>Research</li><li>Academic expertise</li><li>Innovation</li><li>Impact measurement</li></ul></div>
+      <div class="partner-role up" style="--d:.16s"><span class="role-index">02</span><h3>P10X Academy</h3><p class="role-purpose">Skills and technical implementation</p><ul><li>TVET training</li><li>Practical learning</li><li>Technical trainers</li><li>Skills development</li></ul></div>
+      <div class="partner-role up" style="--d:.24s"><span class="role-index">03</span><h3>Industry</h3><p class="role-purpose">Exposure and opportunity</p><ul><li>Industry standards</li><li>Mentorship</li><li>Employment</li><li>Entrepreneurship</li></ul></div>
+      <div class="partner-role up" style="--d:.32s"><span class="role-index">04</span><h3>Orang Asli youth</h3><p class="role-purpose">Empowerment</p><ul><li>Skills</li><li>Confidence</li><li>Career</li><li>Income</li></ul></div>
+    </div>
+    <div class="shared-impact up" style="--d:.4s"><span>KNOWLEDGE</span><span>SKILLS</span><span>OPPORTUNITY</span><span>IMPACT</span></div>
+    <p class="partnership-note">A shared commitment to connect training with work and long-term community development.</p>
+    <footer class="pitch-footer"><span>UTM × P10X ACADEMY</span><span class="number">06 / 08</span></footer>
+  </section>
+
+  <!-- 7 · UTM PROJECT AND COMMUNITY JOURNEY -->
+  <section class="slide pitch-slide journey-pitch" data-label="UTM Orang Asli Project">
+    <p class="eyebrow">UTM Orang Asli project</p>
+    <h2 class="headline up">From community outreach <span class="accent">to academy placement.</span></h2>
+    <div class="journey-layout">
+      <div class="up" style="--d:.08s">
+        <p class="initiative-name">Program Peningkatan STEM, TVET, Kesihatan dan Sosio-ekonomi Masyarakat Orang Asli</p>
+        <p class="initiative-meta">Kuala Pangsun, Hulu Langat. Led by Dr. Nurul Zainab Along, supported by MJIIT and UTM’s Centre for Community &amp; Industry Network.</p>
+        <div class="journey-timeline">
+          <div class="journey-milestone"><time>JUL 2025</time><div><h3>Community engagement</h3><p>UTM began community learning and outreach.</p></div></div>
+          <div class="journey-milestone"><time>OCT 2025</time><div><h3>Skills training and assessment</h3><p>P10X delivered practical window tint training and assessment.</p></div></div>
+          <div class="journey-milestone"><time>NOV 2025</time><div><h3>Academy placement</h3><p>Ten youth began a seven-month placement at P10X Academy.</p></div></div>
+        </div>
+      </div>
+      <div class="up" style="--d:.16s">
+        <figure class="journey-photo"><img src="../.media/images/image_005.png" alt="P10X Academy sharing the programme with Orang Asli participants and families in a community hall" /><figcaption>Continuing the journey through conversations with participants and families.</figcaption></figure>
+        <div class="journey-evidence">
+          <img src="../.media/images/image_003.jpeg" alt="Orang Asli participants at P10X Academy during the November 2025 placement programme" />
+          <div><div class="cohort-stats"><div><strong>10</strong><span>youth selected for training</span></div><div><strong>7</strong><span>months of structured training</span></div></div><p class="cohort-caption">November 2025 training cohort, reported by UTM.</p></div>
+        </div>
+      </div>
+    </div>
+    <p class="source">UTM NewsHub: <a href="https://news.utm.my/2025/07/mjiit-fosters-water-responsibility-with-orang-asli-youths/" target="_blank" rel="noopener">July 2025 initiative</a> · <a href="https://news.utm.my/2025/10/tint-skills-empower-communities/" target="_blank" rel="noopener">October skills programme</a> · <a href="https://news.utm.my/2025/11/utm-dan-p10x-academy-buka-peluang-kemahiran-automotif-kepada-belia-orang-asli/" target="_blank" rel="noopener">November academy placement</a>. Dates refer to UTM reports.</p>
+    <footer class="pitch-footer"><span>UTM × P10X ACADEMY</span><span class="number">07 / 08</span></footer>
+  </section>
+
+  <!-- 8 · VIDEO IMPACT AND PARTNERSHIP INVITATION -->
+  <section class="slide pitch-slide" data-label="Video Impact · Ajen Azlan">
+    <p class="eyebrow">Video impact</p>
+    <h2 class="headline up">Ajen Azlan: <span class="accent">skills at work.</span></h2>
+    <div class="impact-pitch-layout">
+      <figure class="impact-film up" style="--d:.1s">
+        <video src="../media/Video1.mp4" poster="../.media/images/image_001.jpg" playsinline controls preload="none" data-manual-play aria-label="Ajen Azlan shares his experience in automotive aesthetics"></video>
+        <button class="film-play" type="button" aria-label="Play Ajen's story with sound"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" /></svg><span>Play Ajen’s story</span></button>
+        <figcaption>An Orang Asli talent working in the automotive aesthetics industry.</figcaption>
+      </figure>
+      <div class="impact-invitation up" style="--d:.18s">
+        <span class="objective-tag">04 · Economic empowerment</span>
+        <h3>Opportunity beyond training.</h3>
+        <p>Create pathways to jobs, enterprise and income.</p>
+        <div class="partner-invitation"><strong>Support the next Orang Asli cohort.</strong><p>Connect training with mentors and work placements.</p></div>
+      </div>
+    </div>
+    <footer class="pitch-footer"><span>UTM × P10X ACADEMY</span><span class="number">08 / 08</span></footer>
+  </section>
+
+  <!-- Archived shareholder deck. Kept in source for recovery, excluded from slide navigation. -->
+  <template id="archived-shareholder-deck">
+
+  <!-- 1 · COVER -->
+  <section class="slide cover cover-collab" data-label="Cover">
+    <div class="coverbg"><img src="../media/image75.jpeg" alt="Trainer guiding participants during practical automotive training" /></div>
     <div class="cover-shade"></div>
     <div style="position: relative;">
-      <img class="up" src="../media/image103.png" alt="P10X Academy" style="height: 88px; filter: brightness(0) invert(1); --d: 0s;" />
-      <h1 class="display up" style="--d: 0.1s;">Beyond Detailing,<br /><span class="hl">Crafting The Future</span></h1>
-      <p class="tagline up" style="--d: 0.22s;">Auto Aesthetics Specialist · Shareholder Briefing</p>
-      <div class="badge-row up" style="--d: 0.34s;">
-        <span class="badge"><i data-lucide="award"></i><span>TVET Accredited</span></span>
-        <span class="badge"><i data-lucide="map-pin"></i><span>Bandar Sunway</span></span>
-        <span class="badge"><i data-lucide="trending-up"></i><span>Est. 2023</span></span>
+      <div class="collab-lockup up" style="--d: 0s;" aria-label="UTM, P10X Academy and industry collaboration">
+        <span class="utmlabel">UTM</span><span class="join">×</span><span class="p10xlabel">P10X ACADEMY</span><span class="join">×</span><span class="industrylabel">INDUSTRY</span>
+      </div>
+      <h1 class="display up" style="--d: 0.1s;">Empowering Orang Asli Communities<br /><span class="hl">Through Skills, Industry &amp; Opportunity</span></h1>
+      <p class="tagline up" style="--d: 0.22s;">Academia–Industry Collaboration for Sustainable Community Development</p>
+      <div class="cover-detail up" style="--d: 0.34s;">
+        <span class="label">Presented by</span>
+        <span class="value">P10X Academy<br />In collaboration with Universiti Teknologi Malaysia (UTM) – MJIIT</span>
+      </div>
+      <div class="cover-event up" style="--d: 0.44s;">
+        <span>10 September 2026</span>
+        <span>P10X Academy, Bandar Sunway</span>
       </div>
     </div>
   </section>
@@ -1565,6 +2120,7 @@ deck-stage[data-motion="calm"] .road { --T: 1.2s; }
     </div>
   </section>
 
+  </template>
 </deck-stage>
 <script src="deck-stage.js"></script>
 <script src="image-slot.js"></script>
@@ -1603,14 +2159,23 @@ if (window.lucide) lucide.createIcons();
 (() => {
   const stage = document.querySelector('deck-stage');
   if (!stage) return;
+  stage.querySelectorAll('video[data-manual-play]').forEach((video) => {
+    const playButton = video.parentElement.querySelector('.film-play');
+    if (!playButton) return;
+    playButton.addEventListener('click', () => video.play().catch(() => { video.controls = true; }));
+    video.addEventListener('play', () => { playButton.hidden = true; });
+    video.addEventListener('pause', () => { playButton.hidden = false; });
+    video.addEventListener('ended', () => { playButton.hidden = false; });
+  });
   const sync = () => {
     document.querySelectorAll('deck-stage > section').forEach((s) => {
       const active = s.hasAttribute('data-deck-active');
       // gallery slide is user-driven — don't auto-play/reset its players
       if (s.querySelector('.vg')) { if (!active) s.querySelectorAll('.vg-main video').forEach((v) => v.pause()); return; }
       s.querySelectorAll('video').forEach((v) => {
+        if (v.hasAttribute('data-manual-play')) { if (!active) v.pause(); return; }
         if (active) { v.play().catch(() => {}); }
-        else { v.pause(); v.currentTime = 0; }
+        else { v.pause(); if (v.readyState > 0) v.currentTime = 0; }
       });
     });
   };
@@ -1731,10 +2296,10 @@ if (window.lucide) lucide.createIcons();
 <template id="__bundler_thumbnail" data-bg-color="#f5f8f9">
   <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
     <rect width="1200" height="800" fill="#f5f8f9"/>
-    <rect x="360" y="250" width="480" height="300" rx="24" fill="#0d1517"/>
+    <rect x="360" y="250" width="480" height="300" rx="24" fill="#e1efea"/>
     <path d="M540 350 L540 450 L620 400 Z" fill="#2ba5b4"/>
-    <text x="600" y="620" font-family="DM Sans, sans-serif" font-size="64" font-weight="900" fill="#14181a" text-anchor="middle">P10X</text>
-    <text x="600" y="680" font-family="DM Sans, sans-serif" font-size="30" font-weight="700" fill="#2ba5b4" text-anchor="middle" letter-spacing="6">ACADEMY</text>
+    <text x="600" y="620" font-family="DM Sans, sans-serif" font-size="58" font-weight="900" fill="#14181a" text-anchor="middle">UTM × P10X</text>
+    <text x="600" y="680" font-family="DM Sans, sans-serif" font-size="28" font-weight="700" fill="#2ba5b4" text-anchor="middle" letter-spacing="4">ORANG ASLI TVET PROGRAMME</text>
   </svg>
 </template>
 </body>

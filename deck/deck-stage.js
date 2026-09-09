@@ -178,7 +178,7 @@
       position: fixed;
       inset: 0;
       display: block;
-      background: #000;
+      background: var(--deck-surround, #e9eeea);
       color: #fff;
       font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
       overflow: hidden;
@@ -188,7 +188,7 @@
      * the first visible paint has the deck's real typography + final rail
      * layout. opacity (not visibility) so the active slide can't un-hide
      * itself via the ::slotted([data-deck-active]) visibility:visible rule.
-     * Only the stage/rail hide — the black :host background stays, so the
+     * Only the stage/rail hide — the :host background stays, so the
      * iframe doesn't flash the page's default white. */
     :host([data-fonts-pending]) .stage,
     :host([data-fonts-pending]) .rail { opacity: 0; pointer-events: none; }
