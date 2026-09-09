@@ -23,15 +23,15 @@ English is used throughout, retaining Orang Asli, location names and established
 ## Project milestones supplied by the team
 
 - 25 September 2025: project initiation.
-- Undated: programme at Kampung Lembah Pangsun community hall, engaging the Orang Asli community in Sungai Pangsun and introducing TVET.
-- Undated: community programme at UTM.
+- 27 September 2025: programme at Kampung Lembah Pangsun community hall, engaging the Orang Asli community in Sungai Pangsun and introducing TVET.
+- 8 October 2025: community programme at UTM.
 - 25 November 2025: student registration and handover with UTM at P10X Academy.
 - 27 November 2025: JAKOA Selangor permission letter for carrying out the project.
 - 4 June 2026: trainee supervision and window tint demonstrations by Orang Asli trainees for new students.
 - 12 August 2026: 2026 recruitment programme at Dewan Temuan.
 - 28 August 2026: new trainee intake and registration at P10X Academy.
 
-Slide 3 follows the owner's latest eight-item list exactly in sequence. The community hall programme and UTM community programme appear between initiation and registration, with no dates assigned. The earlier separate entry for initial coordination meetings has been removed.
+Slide 3 follows the owner's latest eight-item list exactly in sequence. The owner subsequently supplied 27 September for the community hall programme and 8 October for the UTM community programme. Both use 2025, consistent with their position between the September 2025 initiation and November 2025 registration. The earlier separate entry for initial coordination meetings has been removed.
 
 The project initiation date is not described as the first-ever UTM engagement with Orang Asli communities. The November event is not labelled the academy's first-ever Orang Asli intake.
 
